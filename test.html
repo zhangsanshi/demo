@@ -1,0 +1,85 @@
+<style>
+    .tree {
+        padding-top:40px;
+    }
+    .tree div{
+        position: relative;
+        height: 10px;
+        background: #1f6c2f;
+        margin:0 auto;
+    }
+    .tree-hd:before{
+        content: ' ';
+        position: absolute;
+        left: 50%;
+        margin-left: -6px;
+        border-bottom: 12px solid #1f6c2f;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        bottom: -4px;
+    }
+    .tree-ft:before {
+        content: ' ';
+        position: absolute;
+        left: 50%;
+        width: 40px;height: 60px;
+        margin-left:-20px;
+        top: 10px;
+        background: #803825;
+    }
+    .ball{
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-radius: 8px;
+    }
+</style>
+
+<div>
+   <div class="tree">
+       <div class="tree-hd"></div>
+       <div ></div><div ></div><div ></div>
+       <div ></div><div ></div><div ></div>
+       <div ></div><div ></div><div ></div>
+       <div ></div><div ></div><div ></div>
+       <div ></div><div ></div><div ></div>
+       <div ></div><div ></div><div ></div>
+       <div ></div><div ></div><div ></div>
+       <div ></div><div ></div><div ></div>
+       <div ></div><div ></div><div ></div>
+       <div class="tree-ft"></div>
+   </div>
+</div>
+<script>
+    function $(selector) {
+        return document.querySelectorAll(selector);
+    }
+    function getColor() {
+        var r = Math.ceil(Math.random()*255);
+        var g = Math.ceil(Math.random()*255);
+        var b = Math.ceil(Math.random()*255);
+        var a = Math.random();
+        return [r, g, b].join(',');
+    }
+    function ballChange(cell, width) {
+        var leftWidth = width * Math.random();
+        if (Math.random() > Math.random() && width >= leftWidth + 8) {
+            cell.innerHTML = `<span class="ball" style="left: ${leftWidth + 'px'}; background: rgb(${getColor()})"></span>`;
+        } else {
+            cell.innerHTML = '';
+        }
+        setTimeout(function () {
+            ballChange(cell, width);
+        }, 700);
+    }
+    var cells = [].slice.call($('.tree')[0].children, 0);
+    var len = cells.length;
+    var maxWidth = 200;
+    var minWidth = 0;
+    var step = (maxWidth - minWidth) / len;
+    cells.forEach(function (cell, index, inst) {
+        var width = minWidth + index * step;
+        cell.style.width = width;
+        ballChange(cell, width);
+    });
+</script>
