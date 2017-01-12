@@ -4,10 +4,12 @@
 <ul>
     <li><a href="?fast">with fastclick</a></li>
     <li><a href="?">no fastclick</a></li>
+    <li><a href="?needsclick">with needsclick</a></li>
 </ul>
 
 <p>
-    test in mobile, click the black block, use fastclick not work.
+    test in mobile, click the black block, use fastclick not work,
+    but if you add needsclick class in target element, then it work.
 </p>
 <label >
     <i class="icon"></i>
@@ -28,6 +30,9 @@
 </style>
 <script>
     $(function () {
+        if (location.search === '?needsclick') {
+            $('.icon').addClass('needsclick');
+        }
         if (location.search === '?fast') {
             FastClick.attach(document.body);
         }
