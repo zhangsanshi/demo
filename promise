@@ -1,0 +1,83 @@
+<div id="result">
+
+</div>
+<button onclick="nativePromise()"> native Promise</button>
+<button onclick="jQueryPromise()"> JQuery Promise</button>
+<div id="code">
+
+</div>
+
+<script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+<script>
+  var i = 0;
+  var j = 0;
+  function showResult(text) {
+    result.innerText += `\n${text}`;
+  }
+  function clearResult() {
+    result.innerText = '';
+  }
+  function runPromise(done, fail) {
+    clearResult();
+    done().then(function (){
+      showResult('done0');
+      console.log('done0');
+    },function() {
+      showResult('fail0');
+      console.log('fail0');
+    }).then(fail).then(function (){
+      showResult('done1');
+      console.log('done1');
+    },function() {
+      showResult('fail1');
+      console.log('fail1');
+    }).then(function(){
+      showResult('done2');
+      console.log('done2');
+    },function() {
+      showResult('fail2');
+      console.log('fail2');
+    }).then(function(){
+      showResult('done3');
+      console.log('done3');
+    },function() {
+      showResult('fail3');
+      console.log('fail3');
+    });
+  }
+  code.innerText = runPromise.toString().replace(/([\r\n])/g, function (a, b) {
+    return b + b;
+  });
+  function nativePromise() {
+    function getPromise(executor) {
+      return new Promise(executor);
+    }
+    function done() {
+      return getPromise(function (resolve, reject) {
+        resolve(i++);
+      });
+    }
+    function fail() {
+      return getPromise(function (resolve, reject) {
+        reject(j++);
+      });
+    }
+    runPromise(done, fail);
+  }
+
+  function jQueryPromise() {
+    function getPromise() {
+      return $.Deferred();
+    }
+    function done() {
+      return getPromise().resolve(i++);;
+    }
+    function fail() {
+      return getPromise().reject(j++);
+    }
+    runPromise(done, fail);
+  }
+</script>
