@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>测试</title>
+    <script>
+        function delayAsync(times) {
+            var now = new Date() - 0;
+
+            var delay = now + times;
+            while (new Date() - 0 < delay) {
+
+            }
+            console.log(now);
+        }
+    </script>
+</head>
+<body>
+<script>
+    console.log(new Date() - 0, 'body');
+</script>
+
+<div>1</div>
+<script>
+    delayAsync(2000);
+</script>
+
+<div>22222222222222222222222222222222222222222222222</div>
+<script>
+    delayAsync(2000);
+</script>
+
+<div>3</div>
+<script>
+    delayAsync(10000);
+</script>
+<script>
+    console.log(new Date() - 0, 'body');
+</script>
+</body>
+</html>
