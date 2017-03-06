@@ -15,22 +15,39 @@
             console.log(now);
         }
     </script>
+    <style>
+        body {
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
 <script>
     console.log(new Date() - 0, 'body');
 </script>
-
+<style>
+    body {
+        background: #000;
+    }
+</style>
 <div>1</div>
 <script>
     delayAsync(2000);
 </script>
-
+<style>
+    body {
+        background: #ff0000;
+    }
+</style>
 <div>22222222222222222222222222222222222222222222222</div>
 <script>
     delayAsync(2000);
 </script>
-
+<style>
+    body {
+        background: #00ff00;
+    }
+</style>
 <div>3</div>
 <script>
     delayAsync(10000);
