@@ -3,26 +3,41 @@
 </div>
 <button onclick="nativePromise()"> native Promise</button>
 <button onclick="jQueryPromise()"> JQuery Promise</button>
+<button onclick="firstPromiseDone()"> first done</button>
+<button onclick="firstPromiseFail()"> first fail</button>
 <pre id="code">
 
 </pre>
 
 <script
-    src="https://code.jquery.com/jquery-2.2.4.min.js"
-    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-    crossorigin="anonymous"></script>
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
 <script>
   var i = 0;
   var j = 0;
+  var firstPromise = function (done, fail) {
+      if (firstPromiseType === 'done') {
+          return done();
+      }
+      return fail();
+  };
+  var firstPromiseType = 'done';
   function showResult(text) {
     result.innerText += `\n${text}`;
   }
   function clearResult() {
     result.innerText = '';
   }
+  function firstPromiseDone() {
+    firstPromiseType = 'done';
+  }
+  function firstPromiseFail() {
+    firstPromiseType = 'fail';
+  }
   function runPromise(done, fail) {
     clearResult();
-    done().then(function (){
+    firstPromise(done, fail).then(function (){
       showResult('done0');
       console.log('done0');
     },function() {
