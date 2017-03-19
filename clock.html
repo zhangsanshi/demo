@@ -1,0 +1,105 @@
+<meta viewport="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<div class="clock">
+    <div class="clock-times">3</div>
+    <div class="clock-times">12</div>
+    <div class="clock-times">9</div>
+    <div class="clock-times">6</div>
+    <div class="clock-s"></div>
+    <div class="clock-m"></div>
+    <div class="clock-h"></div>
+</div>
+
+<style>
+    .clock {
+        position: relative;
+        margin: 20px;
+        width: 200px;
+        height: 200px;
+        border: 1px solid #eee;
+        -webkit-border-radius: 200px;
+        -moz-border-radius: 200px;
+        border-radius: 200px;
+    }
+    .clock-times {
+        position: absolute;
+    }
+    .clock-times:nth-child(1) {
+        top: 50%;
+        right: 0;
+        transform: translate(100%, -50%);
+    }
+    .clock-times:nth-child(2) {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -100%);
+    }
+    .clock-times:nth-child(3) {
+        top: 50%;
+        left: 0;
+        transform: translate(-100%, -50%);
+    }
+    .clock-times:nth-child(4) {
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 100%);
+    }
+    @keyframes clock {
+        0 {
+            transform: rotate(0deg) translateZ(0);
+        }
+        100% {
+            transform: rotate(360deg) translateZ(0);
+        }
+    }
+    .clock-h,
+    .clock-m,
+    .clock-s {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        /* steps 60 */
+        animation: clock 60s steps(60, end) infinite;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+    }
+    .clock-m {
+        /* 60 * 60 */
+        animation-duration: 3600s;
+    }
+    .clock-h {
+        /* 60 * 60 * 24 */
+        animation-duration: 86400s;
+    }
+    .clock-s:before {
+        content: ' ';
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        width: 0px;
+        height:60px;
+        border-right:2px solid #000;
+        margin-left:-1px;
+
+    }
+    .clock-m:before {
+        content: ' ';
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        width: 0px;
+        margin-left:-2px;
+        height:60px;
+        border-right:4px solid #000;
+    }
+    .clock-h:before {
+        content: ' ';
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        width: 0;
+        margin-left:-2px;
+        height:30px;
+        border-right:4px solid #000;
+    }
+</style>
