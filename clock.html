@@ -65,11 +65,11 @@
     }
     .clock-m {
         /* 60 * 60 */
-        animation-duration: 3600s;
+        animation: clock 3600s steps(3600, end) infinite;
     }
     .clock-h {
         /* 60 * 60 * 12 */
-        animation-duration: 43200s;
+        animation: clock 43200s steps(43200, end) infinite;
     }
     .clock-s:before {
         content: ' ';
