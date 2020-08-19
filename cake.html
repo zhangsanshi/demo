@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <style>
+            p {
+                padding: 10px ;
+            }
+            .correct,.correctText {
+                color: red;
+            }
+            .index {
+                color: #999;
+            }
+            #list {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                background: #fff;
+            }
+            #list::before {
+                content: '导航';
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                opacity: 0.7;
+                z-index: 1;
+                background: burlywood;
+                color: #fff;
+            }
+            #list[toggle]::before {
+                display: none;
+            }
+            #list .index {
+                display: none;
+                
+            }
+            #list[toggle] {
+                right: 0;
+                overflow-y: scroll;
+            }
+            #list[toggle] .index {
+                text-align: center;
+                display: inline-block;
+                width: 10vw;
+                height: 40px;
+                line-height: 40px;
+                box-sizing: border-box;
+                border-bottom: 1px solid #cdcdcd;
+                border-right: 1px solid #cdcdcd;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="id-0"><span  class="index">【1】</span><span class="correct">[D]</span>道德是人类社会生活中依据社会舆论、传统习惯和<span class="correctText">内心信念</span>，以善恶评价为标准的意识、规范、行为和活动的总称。</p>
+<p id="id-1"><span  class="index">【2】</span><span class="correct">[C]</span>竞争的实质是<span class="correctText">人才</span>和知识的竞争。</p>
+<p id="id-2"><span  class="index">【3】</span><span class="correct">[D]</span>引起人类患猪囊虫病的直接原因<span class="correctText">吃了未经煮透的患有囊尾幼虫的猪肉</span>。</p>
+<p id="id-3"><span  class="index">【4】</span><span class="correct">[A]</span>不属于包装材料污染的有毒物质是<span class="correctText">炸油中的3-4 苯并芘</span>。</p>
+<p id="id-4"><span  class="index">【5】</span><span class="correct">[C]</span>未煮熟的豆浆中容易引起食物中毒的有毒物质是<span class="correctText">胰蛋白酶抑制素</span>。</p>
+<p id="id-5"><span  class="index">【6】</span><span class="correct">[D]</span>不会造成砷中毒的是<span class="correctText">食品原料中微量存在砷</span>。</p>
+<p id="id-6"><span  class="index">【7】</span><span class="correct">[D]</span>我国蔬菜栽培主要以<span class="correctText">人畜粪便</span>作肥料，因此肠道致病菌和寄生虫卵污染很严重。</p>
+<p id="id-7"><span  class="index">【8】</span><span class="correct">[B]</span>冻禽在冷藏时被<span class="correctText">假单胞菌</span>污染而腐败往往产生绿色。</p>
+<p id="id-8"><span  class="index">【9】</span><span class="correct">[B]</span>以下不属于食品添加剂使用目的的是<span class="correctText">提高营养价值</span>。</p>
+<p id="id-9"><span  class="index">【10】</span><span class="correct">[A]</span>我国规定糖精或其钠盐在食品中的用量为<span class="correctText">0.15</span>g∕kg。</p>
+<p id="id-10"><span  class="index">【11】</span><span class="correct">[A]</span>经常性搬家式的大扫除是灭鼠工作中最重要的一种方法，因为它属于<span class="correctText">生态学灭鼠</span>。</p>
+<p id="id-11"><span  class="index">【12】</span><span class="correct">[A]</span>糖类的主要食物来源是谷类和根茎类食品，蔬果类是<span class="correctText">食物纤维</span>的主要来源。</p>
+<p id="id-12"><span  class="index">【13】</span><span class="correct">[D]</span>脂肪是肌体的重要组成成分，由<span class="correctText">碳、氢、氧</span>元素组成。</p>
+<p id="id-13"><span  class="index">【14】</span><span class="correct">[A]</span>下列对维生素B1 的生理功能叙述中不正确的选项是<span class="correctText">预防和治疗癞皮病</span>。</p>
+<p id="id-14"><span  class="index">【15】</span><span class="correct">[D]</span>下列选项对矿物质的生理功能叙述正确的是<span class="correctText">矿物质缺乏可引起脚气病</span>。</p>
+<p id="id-15"><span  class="index">【16】</span><span class="correct">[D]</span>膳食中氯化钠的摄入量过多，有引起<span class="correctText">高血压</span>的危险。</p>
+<p id="id-16"><span  class="index">【17】</span><span class="correct">[A]</span>下列不属于基础代谢消耗能量的选项是<span class="correctText">取暖</span>。</p>
+<p id="id-17"><span  class="index">【18】</span><span class="correct">[A]</span>一位女教师３０岁，身高１６０厘米，如果其每日需要热量为10000 千焦，则其每日需<span class="correctText">糖类</span>60～90克。</p>
+<p id="id-18"><span  class="index">【19】</span><span class="correct">[D]</span>谷类中缺乏的必需氨基酸是<span class="correctText">赖</span>氨酸。</p>
+<p id="id-19"><span  class="index">【20】</span><span class="correct">[B]</span><span class="correctText">洋白菜</span>含有植物杀菌素和芥子挥发油，可起引抑菌作用。</p>
+<p id="id-20"><span  class="index">【21】</span><span class="correct">[B]</span>“足价蛋白”一般是指<span class="correctText">奶类</span>蛋白。</p>
+<p id="id-21"><span  class="index">【22】</span><span class="correct">[A]</span>下列水产品中，胆固醇含量低于肉类的是<span class="correctText">鱼</span>。</p>
+<p id="id-22"><span  class="index">【23】</span><span class="correct">[B]</span>白酒中所含<span class="correctText">醇</span>量增加，不仅烈性增高，而且有烧灼感觉，对人体健康不利。</p>
+<p id="id-23"><span  class="index">【24】</span><span class="correct">[C]</span>比较合理的用餐数量分配是：午餐的数量占全天总数量的<span class="correctText">0.4</span>。</p>
+<p id="id-24"><span  class="index">【25】</span><span class="correct">[B]</span>成本是企业管理者<span class="correctText">经营决策</span>的重要依据。</p>
+<p id="id-25"><span  class="index">【26】</span><span class="correct">[A]</span>在厨房范围内，<span class="correctText">菜点成本</span>是指构成产品的原料消耗之和。</p>
+<p id="id-26"><span  class="index">【27】</span><span class="correct">[A]</span>本月耗用原料成本等于厨房月初结存额，加上本月<span class="correctText">领用</span>额，减去月末盘存额。</p>
+<p id="id-27"><span  class="index">【28】</span><span class="correct">[C]</span>原材料规格、质量和原材料的<span class="correctText">处理技术</span>是决定出材率的两大因素。</p>
+<p id="id-28"><span  class="index">【29】</span><span class="correct">[D]</span>原料损耗率的高低可以考核操作人员的<span class="correctText">技术水平</span>。</p>
+<p id="id-29"><span  class="index">【30】</span><span class="correct">[D]</span>加工前是一种原料，加工后是若干档原料或半制品的净料单位成本的计算方法有<span class="correctText">3种</span>。</p>
+<p id="id-30"><span  class="index">【31】</span><span class="correct">[C]</span>从理论上讲，菜点的价格是由<span class="correctText">3部分</span>构成的。</p>
+<p id="id-31"><span  class="index">【32】</span><span class="correct">[D]</span>为制定菜点价格提供依据的定价程序是<span class="correctText">预测菜点成本</span>。</p>
+<p id="id-32"><span  class="index">【33】</span><span class="correct">[C]</span>在菜点销售价格和耗料一致的条件下，销售毛利率与是<span class="correctText">成本率</span>存在换算关系。</p>
+<p id="id-33"><span  class="index">【34】</span><span class="correct">[A]</span>下列中属于厨房安全生产应有的规章制度是<span class="correctText">安全生产责任制</span>。</p>
+<p id="id-34"><span  class="index">【35】</span><span class="correct">[D]</span>电伤事故是由于电流通过人体表面或者人体与带电者之间产生<span class="correctText">电弧</span>而造成身体外表创伤。</p>
+<p id="id-35"><span  class="index">【36】</span><span class="correct">[D]</span>雷电的形成是由于雷云中的<span class="correctText">电荷积累</span>。</p>
+<p id="id-36"><span  class="index">【37】</span><span class="correct">[C]</span>影响气体混合物爆炸极限的主要因素有：温度、压力、<span class="correctText">介质</span>和着火源等。</p>
+<p id="id-37"><span  class="index">【38】</span><span class="correct">[D]</span>如果身上着火，下列行为中错误的是<span class="correctText">用手扑打</span>。</p>
+<p id="id-38"><span  class="index">【39】</span><span class="correct">[A]</span>我们使用塑料烹饪器具时要满足两个基本要求：安全卫生和<span class="correctText">化学稳定性</span>。</p>
+<p id="id-39"><span  class="index">【40】</span><span class="correct">[D]</span>安装合格的空调设备不会出现<span class="correctText">超载不跳闸</span>的现象。</p>
+<p id="id-40"><span  class="index">【41】</span><span class="correct">[A]</span>“butter”是指<span class="correctText">奶油</span>。</p>
+<p id="id-41"><span  class="index">【42】</span><span class="correct">[B]</span>“add salt”的意思是<span class="correctText">加盐</span>。</p>
+<p id="id-42"><span  class="index">【43】</span><span class="correct">[A]</span>“wholewheatbread”的意思是<span class="correctText">全麦面包</span>。</p>
+<p id="id-43"><span  class="index">【44】</span><span class="correct">[A]</span>折叠面团，用英文表示为<span class="correctText">folddough</span>。</p>
+<p id="id-44"><span  class="index">【45】</span><span class="correct">[A]</span>西式面点英语为<span class="correctText">westpastry</span>。</p>
+<p id="id-45"><span  class="index">【46】</span><span class="correct">[D]</span>面粉的“熟化”是指面粉在储存期间，空气的氧气自动氧化面粉中的<span class="correctText">色素</span>，并使面粉中的还原性氢团转化为双硫键，从而使面粉色泽变白，面粉的性能得到改善。</p>
+<p id="id-46"><span  class="index">【47】</span><span class="correct">[C]</span>马司板又称<span class="correctText">杏仁膏</span>。</p>
+<p id="id-47"><span  class="index">【48】</span><span class="correct">[A]</span>制作风登糖时需要加入一定量的葡萄糖，如果没有葡萄糖，则可以用<span class="correctText">玉米糖浆</span>替代。</p>
+<p id="id-48"><span  class="index">【49】</span><span class="correct">[B]</span>质优的小麦一般含水量低于<span class="correctText">0.15</span>。</p>
+<p id="id-49"><span  class="index">【50】</span><span class="correct">[B]</span>一般情况下，面粉在<span class="correctText">55%～65%</span>的湿度环境中保管较为理想。</p>
+<p id="id-50"><span  class="index">【51】</span><span class="correct">[A]</span>油脂保存时，应避免与杂质接触，尽量减少<span class="correctText">存放时间</span>以确保油脂不变质。</p>
+<p id="id-51"><span  class="index">【52】</span><span class="correct">[C]</span>在打发无糖型奶油时，可以直接加入<span class="correctText">糖粉</span>。</p>
+<p id="id-52"><span  class="index">【53】</span><span class="correct">[C]</span>无论使用哪种融化黄油的方法。都应以<span class="correctText">黄油全部融为液体、清香透明、不变色</span>为佳。</p>
+<p id="id-53"><span  class="index">【54】</span><span class="correct">[D]</span>在调制黄油酱时，我们有时要减少熬糖时水的用量，这是因为<span class="correctText">鸡蛋不新鲜</span>。</p>
+<p id="id-54"><span  class="index">【55】</span><span class="correct">[D]</span><span class="correctText">混酥类</span>是在用黄油、面粉、白糖、鸡蛋等主要原料调制成面坯的基础上，经擀制、成型、成熟、装饰等工艺制成的一类酥而无层的点心。</p>
+<p id="id-55"><span  class="index">【56】</span><span class="correct">[C]</span>调制混酥类面坯的基本用料有<span class="correctText">面粉、黄油、糖、鸡蛋</span>等。</p>
+<p id="id-56"><span  class="index">【57】</span><span class="correct">[C]</span><span class="correctText">油糖调制法</span>是先将油脂和糖一起搅拌，然后再加入鸡蛋、面粉等原料的调制工艺方法。</p>
+<p id="id-57"><span  class="index">【58】</span><span class="correct">[C]</span>制作混酥面坯时，如果选用熔点低的液体油脂，吸湿面粉的能力强，擀制时容易发粘，并影响制品的<span class="correctText">酥松性</span>。</p>
+<p id="id-58"><span  class="index">【59】</span><span class="correct">[D]</span>蛋糕类是以<span class="correctText">鸡蛋、油脂、糖、面粉</span>等为主要原料，配以辅料，经一系列加工而成的松软点心。</p>
+<p id="id-59"><span  class="index">【60】</span><span class="correct">[B]</span>蛋白具有起泡性，但过分搅打会破坏<span class="correctText">蛋白胶体物质的韧性</span>，使其保持气体的能力下降。</p>
+<p id="id-60"><span  class="index">【61】</span><span class="correct">[A]</span>采用蛋清、蛋黄分开搅拌法调制蛋糕面糊时，当蛋清打至<span class="correctText">用手将蛋清挑起能够立住</span>即可。</p>
+<p id="id-61"><span  class="index">【62】</span><span class="correct">[A]</span>制作清蛋糕面糊时，加入面粉后也不要用力过猛，时间过长，以防<span class="correctText">破坏面糊中的气泡，影响膨胀度</span>。</p>
+<p id="id-62"><span  class="index">【63】</span><span class="correct">[B]</span>果冻是用<span class="correctText">糖、水</span>和鱼胶粉或琼脂，按一定比例调制而成的冷冻甜食。</p>
+<p id="id-63"><span  class="index">【64】</span><span class="correct">[C]</span>布丁是以<span class="correctText">黄油、白糖、鸡蛋、牛奶</span>等为主要原料，配以辅料，通过蒸或烤制成的一类柔软的甜点心。</p>
+<p id="id-64"><span  class="index">【65】</span><span class="correct">[C]</span>果冻是完全靠结力的<span class="correctText">凝胶作用凝固</span>而形成的。</p>
+<p id="id-65"><span  class="index">【66】</span><span class="correct">[A]</span>一般情况，在果冻液中结力液占全部液体浓度的<span class="correctText">0.02</span>时，才能使液体基本凝固。</p>
+<p id="id-66"><span  class="index">【67】</span><span class="correct">[A]</span>下列都属于软质面包的是<span class="correctText">热狗面包、切片面包、小餐包、奶黄包</span>。</p>
+<p id="id-67"><span  class="index">【68】</span><span class="correct">[D]</span>面团在搅拌时，由于空气的不断进入，使面团所含蛋白质内的<span class="correctText">硫氢键</span>被氧化成分子间的双硫键，从而使面筋形成了三维空间结构。</p>
+<p id="id-68"><span  class="index">【69】</span><span class="correct">[B]</span>面粉中的蛋白质主要由麦胶蛋白、麦谷蛋白、<span class="correctText">麦清蛋白、麦球蛋白</span>等组成。</p>
+<p id="id-69"><span  class="index">【70】</span><span class="correct">[D]</span><span class="correctText">酵母</span>可吸收面团中的养分生长繁殖，并产生二氧化碳，使面团形成膨大、松软、蜂窝状的组织结构。</p>
+<p id="id-70"><span  class="index">【71】</span><span class="correct">[C]</span><span class="correctText">盐</span>可以增加面团中面筋的密度，增强弹性，提高面筋的筋力。</p>
+<p id="id-71"><span  class="index">【72】</span><span class="correct">[B]</span>在“割”制混酥面坯时，如果<span class="correctText">用力过大、过猛</span>，往往会破坏混酥面坯表面结构，影响成品的美观。</p>
+<p id="id-72"><span  class="index">【73】</span><span class="correct">[A]</span>果冻的成型与果冻的用料配方、<span class="correctText">果冻的含水量</span>有着十分紧密的关系。</p>
+<p id="id-73"><span  class="index">【74】</span><span class="correct">[A]</span>面包面团经过了分割操作，下列说法错误的是<span class="correctText">重新形成一层簿的表皮</span>。</p>
+<p id="id-74"><span  class="index">【75】</span><span class="correct">[C]</span>烘烤成熟的混酥面制品，须<span class="correctText">及时取下</span>模具。</p>
+<p id="id-75"><span  class="index">【76】</span><span class="correct">[D]</span>果冻定型的质量与<span class="correctText">结力的用量</span>、定型的温度和时间有关。</p>
+<p id="id-76"><span  class="index">【77】</span><span class="correct">[C]</span>在大多数情况下，软质面包生坯的<span class="correctText">重量越轻、体积越小</span>，其所用的烘烤温度越高、时间越短。</p>
+<p id="id-77"><span  class="index">【78】</span><span class="correct">[C]</span>餐厅零点甜点的装盘宗旨是<span class="correctText">既要和餐厅的风格、档次相适宜，又要突出甜点的特色和风味</span>。</p>
+<p id="id-78"><span  class="index">【79】</span><span class="correct">[D]</span>标准宴会套餐所用的甜点盘大都以<span class="correctText">美观</span>为标准，要求干净、无破损。</p>
+<p id="id-79"><span  class="index">【80】</span><span class="correct">[A]</span>甜点装盘时，下列说法正确的是<span class="correctText">盘子要干净卫生、无破损</span>。</p>
+<p id="id-80"><span  class="index">【81】</span><span class="correct">[B]</span>蛋白具有起泡性，但过分搅打会破坏<span class="correctText">蛋白胶体物质的韧性</span>，使其保持其体的能力下降。</p>
+<p id="id-81"><span  class="index">【82】</span><span class="correct">[D]</span>工作接地电阻一般小于<span class="correctText">4</span></p>
+<p id="id-82"><span  class="index">【83】</span><span class="correct">[B]</span><span class="correctText">副溶血性弧菌</span>在盐浓度为3%时最宜生长繁殖。</p>
+<p id="id-83"><span  class="index">【84】</span><span class="correct">[A]</span>巴菲的英文名称为<span class="correctText">parfait</span>。</p>
+<p id="id-84"><span  class="index">【85】</span><span class="correct">[D]</span>昆虫食品具有<span class="correctText">蛋白质</span>含量丰富，含多种维生素和矿物质的特点。</p>
+<p id="id-85"><span  class="index">【86】</span><span class="correct">[C]</span>果冻成型的方法是将调配好的果冻混合液装入模子里，在<span class="correctText">低温环境中凝固</span>，形成制品。</p>
+<p id="id-86"><span  class="index">【87】</span><span class="correct">[C]</span>机体内缺少维生素B12，会引起<span class="correctText">恶性贫血</span>。</p>
+<p id="id-87"><span  class="index">【88】</span><span class="correct">[C]</span>只有由多种食物相互搭配的膳食，营养种类才齐全，数量才充足，才有利于<span class="correctText">维生素</span>的吸收和利用。</p>
+<p id="id-88"><span  class="index">【89】</span><span class="correct">[C]</span>混酥面坯擀制成型时，为<span class="correctText">防止面团出油、上劲</span>，不要将面坯反复擀制揉搓。</p>
+<p id="id-89"><span  class="index">【90】</span><span class="correct">[B]</span>下列中不属于厨房安全生产应有的规章制度的是<span class="correctText">设备管理责任制</span>。</p>
+<p id="id-90"><span  class="index">【91】</span><span class="correct">[C]</span><span class="correctText">果冻</span>是完全靠结力的凝胶作用凝固而成的冷冻甜点。</p>
+<p id="id-91"><span  class="index">【92】</span><span class="correct">[B]</span>下列选项中<span class="correctText">公平交易，货真价实，不顾质量，利益至上</span>不属于烹饪从业人员的职业道德范畴。</p>
+<p id="id-92"><span  class="index">【93】</span><span class="correct">[B]</span>某产品销售毛利率60%，与此产品相关指标的正确答案<span class="correctText">成本毛利率150%</span>。</p>
+<p id="id-93"><span  class="index">【94】</span><span class="correct">[C]</span>提高<span class="correctText">服务质量</span>的核心是加强职业道德建设。</p>
+<p id="id-94"><span  class="index">【95】</span><span class="correct">[B]</span>切酥皮类的糕点应选用<span class="correctText">锯齿饼刀</span>。</p>
+<p id="id-95"><span  class="index">【96】</span><span class="correct">[A]</span>下列现象属于面团搅拌过度的是<span class="correctText">触摸面团，面团表面光滑、干燥</span>。</p>
+<p id="id-96"><span  class="index">【97】</span><span class="correct">[B]</span>在燃烧过程中，燃气喷离火孔的速度<span class="correctText">大于</span>燃烧速度，火焰难以维持稳定，甚至熄灭，这种现象称为“脱火”。</p>
+<p id="id-97"><span  class="index">【98】</span><span class="correct">[D]</span><span class="correctText">结力</span>又称明胶、鱼胶。</p>
+<p id="id-98"><span  class="index">【99】</span><span class="correct">[A]</span>下列用来制作沙拉的鲜果一般在供客服务前加入的是<span class="correctText">山梅、草莓</span>。</p>
+<p id="id-99"><span  class="index">【100】</span><span class="correct">[D]</span>制作意大利蛋清黄油酱时，搅拌蛋清的搅拌缸有<span class="correctText">糖</span>存在时，不会影响蛋清的打发。</p>
+<p id="id-100"><span  class="index">【101】</span><span class="correct">[D]</span>有些品牌的奶油在加工使用之前需<span class="correctText">在恒温冰箱内解冻</span>解冻。</p>
+<p id="id-101"><span  class="index">【102】</span><span class="correct">[C]</span>“spongecake”是指<span class="correctText">海绵蛋糕</span>。</p>
+<p id="id-102"><span  class="index">【103】</span><span class="correct">[A]</span>在厨房范围内，<span class="correctText">菜点成本</span>是指构成产品的原料耗费之和。</p>
+<p id="id-103"><span  class="index">【104】</span><span class="correct">[D]</span><span class="correctText">糖类</span>是人体最经济的供能物质。</p>
+<p id="id-104"><span  class="index">【105】</span><span class="correct">[C]</span>对于标准宴会套餐所用的甜点盘，下列说法错误的是<span class="correctText">允许有稍微破损</span>。</p>
+<p id="id-105"><span  class="index">【106】</span><span class="correct">[D]</span>“Tool”是指<span class="correctText">工具</span>。</p>
+<p id="id-106"><span  class="index">【107】</span><span class="correct">[C]</span>黑森林蛋糕面糊是采用<span class="correctText">混打法</span>的工艺方法制作的。</p>
+<p id="id-107"><span  class="index">【108】</span><span class="correct">[A]</span>下列都属于装饰造型类制品的是<span class="correctText">巧克力糖棍、面包篮、糖粉盒</span>。</p>
+<p id="id-108"><span  class="index">【109】</span><span class="correct">[C]</span>下列选项中不属于胃液的主要成分的是<span class="correctText">胰蛋白酶</span>。</p>
+<p id="id-109"><span  class="index">【110】</span><span class="correct">[C]</span>中国居民膳食宝塔的第三层是：<span class="correctText">鱼、禽、肉、蛋</span>。</p>
+<p id="id-110"><span  class="index">【111】</span><span class="correct">[D]</span>制作混坯面坯时，如果面粉筋度太高，则在搅拌面团和整形过程中易揉捏出筋，使之在烘烤中<span class="correctText">面皮发生收缩现象</span>，产生坚硬，失去应有的松酥的品质。</p>
+<p id="id-111"><span  class="index">【112】</span><span class="correct">[B]</span>采用<span class="correctText">将甜点、配料、装饰物按照主宾位置安排在同一盘内</span>的零点甜点装盘的方法，最大好处是整体感强，色彩鲜艳，使人一目了然。</p>
+<p id="id-112"><span  class="index">【113】</span><span class="correct">[C]</span>影响气体混合物爆炸极限的主要因素有：温度、<span class="correctText">压力</span>、介质和着火源等。</p>
+<p id="id-113"><span  class="index">【114】</span><span class="correct">[B]</span>不属于放射性污染源的是<span class="correctText">核设施</span>。</p>
+<p id="id-114"><span  class="index">【115】</span><span class="correct">[D]</span><span class="correctText">派</span>是一种油酥面饼，内含水果和馅料，常用圆形模具作坯模。</p>
+<p id="id-115"><span  class="index">【116】</span><span class="correct">[C]</span>下列行为不正确的是<span class="correctText">带手布用碱水煮后，在用清水清洗干净</span>。</p>
+<p id="id-116"><span  class="index">【117】</span><span class="correct">[A]</span>人体所需要的热能是由食物中的<span class="correctText">蛋白质、脂肪、糖类</span>转变成的。</p>
+<p id="id-117"><span  class="index">【118】</span><span class="correct">[D]</span>批量生产的总成本与单位菜点成本的比值是<span class="correctText">成品数量</span>。</p>
+<p id="id-118"><span  class="index">【119】</span><span class="correct">[B]</span>职业道德具有广泛性、<span class="correctText">多样性</span>、实践性和集体性。</p>
+<p id="id-119"><span  class="index">【120】</span><span class="correct">[B]</span><span class="correctText">札干</span>是用明胶片、水和糖粉调制而成的制品。</p>
+<p id="id-120"><span  class="index">【121】</span><span class="correct">[D]</span>引起人类患猪囊虫病的直接原因是<span class="correctText">吃了未经煮透的患有囊尾幼虫病的猪肉</span>。</p>
+<p id="id-121"><span  class="index">【122】</span><span class="correct">[C]</span>保证实测值的准确是成本核算工作顺利进行的<span class="correctText">基本条件</span>之一。</p>
+<p id="id-122"><span  class="index">【123】</span><span class="correct">[C]</span>面包的种类繁多，按面包<span class="correctText">本身的质感</span>划分有软质面包、硬质面包、脆皮面包和松软面包等四大类。</p>
+<p id="id-123"><span  class="index">【124】</span><span class="correct">[D]</span>酱油的卫生问题主要是微生物污染与<span class="correctText">生霉</span>问题。</p>
+<p id="id-124"><span  class="index">【125】</span><span class="correct">[C]</span>“agar”是指<span class="correctText">琼脂</span>。</p>
+<p id="id-125"><span  class="index">【126】</span><span class="correct">[D]</span>毛利额与成本的比率是<span class="correctText">成本毛利率</span>。</p>
+<p id="id-126"><span  class="index">【127】</span><span class="correct">[A]</span>清蛋糕面糊搅拌时要合理控制搅拌温度，温度过高，蛋液会变得<span class="correctText">稀薄、黏性差、无法保持气体</span>。</p>
+<p id="id-127"><span  class="index">【128】</span><span class="correct">[C]</span>果冻内部的胶体结构和硬度与<span class="correctText">结力液体的浓度</span>的有关。</p>
+<p id="id-128"><span  class="index">【129】</span><span class="correct">[C]</span>保护接零是将电器设备的外壳与<span class="correctText">系统的零线</span>相接。</p>
+<p id="id-129"><span  class="index">【130】</span><span class="correct">[C]</span>食品造型艺术的主题、形成、色彩、结构等内容进行预先设计，以便将食品造型的内容美、形式美、<span class="correctText">原料美、色彩美</span>体现在食品造型上。</p>
+<p id="id-130"><span  class="index">【131】</span><span class="correct">[D]</span>布丁是以黄油、鸡蛋、、白糖、牛奶等为主要原料，配以辅料，通过<span class="correctText">蒸或烤</span>制成一类柔软的甜点心。</p>
+<p id="id-131"><span  class="index">【132】</span><span class="correct">[D]</span>在潮湿、高温和有导电尘埃的环境中，要使用<span class="correctText">12V</span>电压。</p>
+<p id="id-132"><span  class="index">【133】</span><span class="correct">[A]</span>我们雕刻用的原料一般有<span class="correctText">西瓜、木瓜、哈密瓜</span>等。</p>
+<p id="id-133"><span  class="index">【134】</span><span class="correct">[D]</span>从理论上讲，菜点的价格是由<span class="correctText">4部分</span>构成的。</p>
+<p id="id-134"><span  class="index">【135】</span><span class="correct">[C]</span>在制作软质面包时，盐的用量一般是面粉用量的<span class="correctText">1～2．2%</span>。</p>
+<p id="id-135"><span  class="index">【136】</span><span class="correct">[C]</span>在构图中要以表现<span class="correctText">色彩美</span>为主。</p>
+<p id="id-136"><span  class="index">【137】</span><span class="correct">[C]</span>职业道德在社会主义时期，是社会主义道德原则在职业生活和<span class="correctText">职业守则</span>中的具体体现。</p>
+<p id="id-137"><span  class="index">【138】</span><span class="correct">[C]</span>下列中不科学的喝水方法是<span class="correctText">吃饭时大量饮水</span>。</p>
+<p id="id-138"><span  class="index">【139】</span><span class="correct">[B]</span>不同的职业道德规范，体现了本行业特殊的、调节人们<span class="correctText">利益关系</span>的要求。</p>
+<p id="id-139"><span  class="index">【140】</span><span class="correct">[C]</span>果冻制作中，若结力使用过量将会使成品<span class="correctText">变硬</span>。</p>
+<p id="id-140"><span  class="index">【141】</span><span class="correct">[D]</span>宴会套餐甜点装盘时，配料或汁应放在圆盘的<span class="correctText">正下方偏右</span>。</p>
+<p id="id-141"><span  class="index">【142】</span><span class="correct">[A]</span>企业进行严格的成本核算能促进企业不断提高<span class="correctText">管理</span>和经营服务水平。</p>
+<p id="id-142"><span  class="index">【143】</span><span class="correct">[D]</span>“Flour”是指<span class="correctText">面粉</span>。</p>
+<p id="id-143"><span  class="index">【144】</span><span class="correct">[C]</span>对人体有生理意义的多糖主要有：糖原、食物纤维和<span class="correctText">淀粉</span>。</p>
+<p id="id-144"><span  class="index">【145】</span><span class="correct">[C]</span>蜂蜜、饴糖、淀粉糖浆要<span class="correctText">密封保管</span>，防止污染。</p>
+<p id="id-145"><span  class="index">【146】</span><span class="correct">[C]</span>奶油根据<span class="correctText">含脂量</span>的不同，将奶油分为轻奶油和重奶油。</p>
+<p id="id-146"><span  class="index">【147】</span><span class="correct">[A]</span>违反厨房卫生规程的做法是<span class="correctText">用手勺直接品尝菜肴</span>。</p>
+<p id="id-147"><span  class="index">【148】</span><span class="correct">[B]</span>调制全蛋黄油酱时，如果所用的鸡蛋不是很新鲜，可以在打发鸡蛋和糖之前<span class="correctText">把鸡蛋和糖加热至糖全部融化，然后再打发</span>，这样可使制品得到改善。</p>
+<p id="id-148"><span  class="index">【149】</span><span class="correct">[A]</span>蛋糕制品色泽要均匀一致，如果发现蛋糕表面有斑点，可能的原因是<span class="correctText">糖的颗粒太粗</span>。</p>
+<p id="id-149"><span  class="index">【150】</span><span class="correct">[A]</span>我国规定亚硝酸盐在食品中的最大用量为<span class="correctText">0.15</span>g∕Kg 。</p>
+<p id="id-150"><span  class="index">【151】</span><span class="correct">[D]</span>“knife”是指<span class="correctText">刀</span>。</p>
+<p id="id-151"><span  class="index">【152】</span><span class="correct">[D]</span>干粉灭火剂是由以<span class="correctText">碳酸氢钠</span>为主要成分的干粉与碱性钠盐干粉组成。</p>
+<p id="id-152"><span  class="index">【153】</span><span class="correct">[B]</span>副溶血性弧菌在盐浓度为<span class="correctText">0.03</span>是最宜生长繁殖。</p>
+<p id="id-153"><span  class="index">【154】</span><span class="correct">[D]</span>甜点盛放到玻璃杯制品中，再放上相应的装饰品和其他配料的方法，简单、明快、立体感强。下列零点甜点中除<span class="correctText">法式小甜点</span>外常采用此方法装盘。</p>
+<p id="id-154"><span  class="index">【155】</span><span class="correct">[C]</span>无论使用哪种溶化黄油的方法，都应以<span class="correctText">黄油全部溶为液体、清香透明、不变色</span>为佳。</p>
+<p id="id-155"><span  class="index">【156】</span><span class="correct">[C]</span>亚硝酸是人体营养中最重要的<span class="correctText">必需脂肪酸</span>。</p>
+<p id="id-156"><span  class="index">【157】</span><span class="correct">[B]</span>西式面点是以<span class="correctText">面粉、糖、油脂、鸡蛋和乳品</span>为主要原料，加以一定的辅料，经过一定加工额而成的营养食物。</p>
+<p id="id-157"><span  class="index">【158】</span><span class="correct">[B]</span><span class="correctText">49岁以上成人体</span>的一般计算方法是：标准体重（千克）＝〔身高（厘米）－105〕×0.9。</p>
+<p id="id-158"><span  class="index">【159】</span><span class="correct">[D]</span>燃烧产生的条件是可燃物质、<span class="correctText">助燃剂</span>和火源三者同时存在。</p>
+<p id="id-159"><span  class="index">【160】</span><span class="correct">[C]</span>保管鸡蛋时应设法闭塞蛋壳气孔，防止<span class="correctText">微生物的侵入</span>，同时注意保持适度的温度、适度以抑制蛋内酶的作用。</p>
+<p id="id-160"><span  class="index">【161】</span><span class="correct">[B]</span>电流通过人体的<span class="correctText">心脏</span>时的危险性最大。</p>
+<p id="id-161"><span  class="index">【162】</span><span class="correct">[B]</span>毛利额是<span class="correctText">价格与原料成本的差</span>。</p>
+<p id="id-162"><span  class="index">【163】</span><span class="correct">[A]</span>一般情况下，制作软质面包时，鲜酵母的用量为面粉用量的<span class="correctText">3～4%</span>。</p>
+<p id="id-163"><span  class="index">【164】</span><span class="correct">[C]</span>我国规定肉制品中亚硝酸盐的残留量不得超过<span class="correctText">0.15</span>g／Kg。</p>
+<p id="id-164"><span  class="index">【165】</span><span class="correct">[D]</span>每克单糖在体内完全氧化可产生<span class="correctText">16.2</span>千焦耳的热量。</p>
+<p id="id-165"><span  class="index">【166】</span><span class="correct">[D]</span>同一规格、质量的原料，由于加工技术的不同，原料的出材率<span class="correctText">不一定相同</span>。</p>
+<p id="id-166"><span  class="index">【167】</span><span class="correct">[D]</span><span class="correctText">油面调制法</span>就是先将油脂和面粉一同放入搅拌缸内，用慢速或中速搅拌，当油脂和面粉充分相溶后，再加入鸡蛋等辅料的工艺方法。</p>
+<p id="id-167"><span  class="index">【168】</span><span class="correct">[D]</span>在捏制混酥面坯成型时，动作要快、灵活，否则<span class="correctText">面坯会出油、上劲，影响品质</span>。</p>
+<p id="id-168"><span  class="index">【169】</span><span class="correct">[B]</span>对人体有生理意义的多糖主要有：淀粉、糖原和<span class="correctText">半乳糖</span>。</p>
+<p id="id-169"><span  class="index">【170】</span><span class="correct">[A]</span>下列行为不正确的是<span class="correctText">清洁带手布时，将带手布先放入清水中清洗</span>。</p>
+<p id="id-170"><span  class="index">【171】</span><span class="correct">[D]</span>下列中不属于食品存放“四隔离”制度的选项是<span class="correctText">荤素隔离</span>。</p>
+<p id="id-171"><span  class="index">【172】</span><span class="correct">[A]</span>面粉的品质主要从面粉的<span class="correctText">含水量</span>、颜色、面筋质和新鲜度等方面加以检验。</p>
+<p id="id-172"><span  class="index">【173】</span><span class="correct">[A]</span>制作混酥坯面坯时，如果面粉筋度太高，则在搅拌面团混入整形过程中<span class="correctText">易揉捏出筋</span>，使之在烘烤中面皮发生收缩现象，产品坚硬，失去应有的松酥的品质。</p>
+<p id="id-173"><span  class="index">【174】</span><span class="correct">[C]</span>面团搅拌的物理效应主要体现在两个方面，一个方面是通过搅拌作用促使面粉水花完全，形成面筋；又使面筋得到扩展，成为既有弹性又有延伸性的面团，另一方面是<span class="correctText">由于搅拌产生摩擦力，使面团的温度升高</span>。</p>
+<p id="id-174"><span  class="index">【175】</span><span class="correct">[D]</span>脂肪不具备的生理功用是<span class="correctText">提供必需氨基酸</span>。</p>
+<p id="id-175"><span  class="index">【176】</span><span class="correct">[A]</span>餐饮成本与利润的和构成产品的<span class="correctText">销售价格</span>。</p>
+<p id="id-176"><span  class="index">【177】</span><span class="correct">[A]</span>食品强加剂是指为增强营业成分而加入食品中的天然或人工合成属于天然营养素范围的<span class="correctText">食品添加剂</span>。</p>
+<p id="id-177"><span  class="index">【178】</span><span class="correct">[C]</span>“Strawberry”是指<span class="correctText">草莓</span>。</p>
+<p id="id-178"><span  class="index">【179】</span><span class="correct">[D]</span>在大型宴会自助餐上，法式小甜点类可以混合码放在<span class="correctText">大镜盘</span>上，以突出整体效果。</p>
+<p id="id-179"><span  class="index">【180】</span><span class="correct">[B]</span>鱼类脂肪大部分为<span class="correctText">不饱和脂肪酸</span>。</p>
+<p id="id-180"><span  class="index">【181】</span><span class="correct">[C]</span>如果使用粉调制果冻液，要求用<span class="correctText">用少量凉水澥开</span>，再进行调制。</p>
+<p id="id-181"><span  class="index">【182】</span><span class="correct">[B]</span>原料加工后的单位成本等于<span class="correctText">损耗率</span>乘以原料购进价。</p>
+<p id="id-182"><span  class="index">【183】</span><span class="correct">[C]</span>在重要宴会上，<span class="correctText">苹果卷</span>往往以其汁分开上桌，这样的好处是可以不影响甜点的造型及色彩。</p>
+<p id="id-183"><span  class="index">【184】</span><span class="correct">[C]</span>以菜点的毛利率为基数的定价方法是<span class="correctText">毛利率法</span>。</p>
+<p id="id-184"><span  class="index">【185】</span><span class="correct">[B]</span>成本可以为企业经营决策提供<span class="correctText">重要数据</span>。</p>
+<p id="id-185"><span  class="index">【186】</span><span class="correct">[B]</span>制作果冻时，为了提高制品营养价值和口味特点，往往在制作中加入适量的<span class="correctText">水果丁</span>。</p>
+<p id="id-186"><span  class="index">【187】</span><span class="correct">[B]</span>不能强化的食品种类是<span class="correctText">蔬果原料</span>。</p>
+<p id="id-187"><span  class="index">【188】</span><span class="correct">[B]</span>乳中蛋白质的消化率较高，一般为<span class="correctText">87～89%</span>。</p>
+<p id="id-188"><span  class="index">【189】</span><span class="correct">[C]</span>清蛋糕的英文常写作<span class="correctText">spongecake</span>。</p>
+<p id="id-189"><span  class="index">【190】</span><span class="correct">[A]</span><span class="correctText">职业道德</span>具有广泛性、多样性、实践性和具体性。</p>
+<p id="id-190"><span  class="index">【191】</span><span class="correct">[A]</span>下列中不属于厨房安全生产应有的规章制度的是<span class="correctText">安全生产责任制</span>。</p>
+<p id="id-191"><span  class="index">【192】</span><span class="correct">[A]</span>我国规定亚硝酸盐在食品中的最大用量为<span class="correctText">0.15</span>g/Kg 。</p>
+<p id="id-192"><span  class="index">【193】</span><span class="correct">[A]</span>下列选项中不属于杂豆的是<span class="correctText">黄豆</span>。</p>
+<p id="id-193"><span  class="index">【194】</span><span class="correct">[C]</span><span class="correctText">化学农药污染</span>环境，可通过生物富集作用作用于人体。</p>
+<p id="id-194"><span  class="index">【195】</span><span class="correct">[A]</span>由于大多数<span class="correctText">粮食</span>含有较多的酸性元素，所以要特别注意多吃碱性食物，保持生理上的酸碱平衡。</p>
+<p id="id-195"><span  class="index">【196】</span><span class="correct">[B]</span>札干是用明胶片、水和<span class="correctText">糖粉</span>调制而成的制品。</p>
+<p id="id-196"><span  class="index">【197】</span><span class="correct">[C]</span>如果干果的用量不大，以采用手工压碎干果，其好处是<span class="correctText">不易使果仁出油</span>。</p>
+<p id="id-197"><span  class="index">【198】</span><span class="correct">[A]</span>指出<span class="correctText">降低</span>成本的途径，是 核算的任务之一。</p>
+<p id="id-198"><span  class="index">【199】</span><span class="correct">[B]</span>擀面杖的英文意思为<span class="correctText">Rollingpin</span>。</p>
+<p id="id-199"><span  class="index">【200】</span><span class="correct">[C]</span>蔗糖极易结晶，为防止糖类制品的结晶，可加入适量的<span class="correctText">酸性物质</span>。</p>
+<p id="id-200"><span  class="index">【201】</span><span class="correct">[C]</span>下列点心不属于混酥类的是<span class="correctText">苹果酥条</span>。</p>
+<p id="id-201"><span  class="index">【202】</span><span class="correct">[C]</span>调制混酥面坯的基本用料有<span class="correctText">面粉、黄油、糖、鸡蛋</span>等。</p>
+<p id="id-202"><span  class="index">【203】</span><span class="correct">[C]</span>加工后原料单位成本等于加工前原料单价与<span class="correctText">出材率</span>的比。</p>
+<p id="id-203"><span  class="index">【204】</span><span class="correct">[D]</span>布丁是以黄油、鸡蛋、白糖、牛奶等为主要原料，配以辅料，通过<span class="correctText">蒸或烤</span>制成的一类柔软的田点心。</p>
+<p id="id-204"><span  class="index">【205】</span><span class="correct">[A]</span>制作果冻时，要正确掌握结力的使用量，如用量太少，则成品会出现<span class="correctText">不能凝固成型</span>。</p>
+<p id="id-205"><span  class="index">【206】</span><span class="correct">[A]</span>净料单位成本是毛利总值与<span class="correctText">毛料重量</span>的比值。</p>
+<p id="id-206"><span  class="index">【207】</span><span class="correct">[B]</span>中国居民膳食宝塔的最底层是<span class="correctText">谷类</span>。</p>
+<p id="id-207"><span  class="index">【208】</span><span class="correct">[C]</span>茶叶中含有多种矿物质元素，其中<span class="correctText">氟和锰</span>比一般植物含量高。</p>
+<p id="id-208"><span  class="index">【209】</span><span class="correct">[D]</span>食用菌营养丰富，是膳食中<span class="correctText">维生素d</span>的良好来源。</p>
+<p id="id-209"><span  class="index">【210】</span><span class="correct">[B]</span>下列不能用食品容器盛放的是<span class="correctText">即将换洗的衣服</span>。</p>
+<p id="id-210"><span  class="index">【211】</span><span class="correct">[A]</span>糖能促进酵母繁殖，但糖的含量超过<span class="correctText">0.1</span>时，会使酵母发酵受到抑制。</p>
+<p id="id-211"><span  class="index">【212】</span><span class="correct">[B]</span>巴菲是一种以鸡蛋和<span class="correctText">牛奶</span>为主要原料的冷冻甜食。</p>
+<p id="id-212"><span  class="index">【213】</span><span class="correct">[B]</span>麦角固醇不能被人体吸收，但在日光照射后，可转变为能被人体吸收的<span class="correctText">维生素d2</span>。</p>
+<p id="id-213"><span  class="index">【214】</span><span class="correct">[B]</span>在商品经济条件下，衡量质量标准的尺度是<span class="correctText">所用的原料</span>。</p>
+<p id="id-214"><span  class="index">【215】</span><span class="correct">[A]</span>在给面包坯表面刷蛋液时，刷蛋液的动作要<span class="correctText">轻柔</span>。</p>
+<p id="id-215"><span  class="index">【216】</span><span class="correct">[B]</span>由于人类活动具有<span class="correctText">社会性</span>，根据其活动二产生三种道德。</p>
+<p id="id-216"><span  class="index">【217】</span><span class="correct">[B]</span>烘烤混酥制品时，一般情况下，烤箱的温度低，所需的烘烤时间<span class="correctText">相对短一些</span>。</p>
+<p id="id-217"><span  class="index">【218】</span><span class="correct">[B]</span>“butter”是指<span class="correctText">人造黄油</span>。</p>
+<p id="id-218"><span  class="index">【219】</span><span class="correct">[D]</span>焙烤百分比是以点心配方中面粉重量为<span class="correctText">1</span>。</p>
+<p id="id-219"><span  class="index">【220】</span><span class="correct">[D]</span>鲜蛋的卫生问题主要是沙门氏菌污染和<span class="correctText">霉菌</span>引起的腐败变质。</p>
+<p id="id-220"><span  class="index">【221】</span><span class="correct">[A]</span>制作果冻所用的水果丁，使用前应<span class="correctText">沥干水分</span>，以保证成品的质量。</p>
+<p id="id-221"><span  class="index">【222】</span><span class="correct">[A]</span>下列选项中有利于提高蛋白质营养价值的是<span class="correctText">金银卷</span>。</p>
+<p id="id-222"><span  class="index">【223】</span><span class="correct">[B]</span>“honey”是指<span class="correctText">蜂蜜</span>。</p>
+<p id="id-223"><span  class="index">【224】</span><span class="correct">[C]</span><span class="correctText">化学农药污染</span>环境，可通过生物富集作用于人体。</p>
+<p id="id-224"><span  class="index">【225】</span><span class="correct">[A]</span>用蜂蜜制作的清蛋糕比用砂糖制作的清蛋糕，所用的烘烤温度是<span class="correctText">低</span>。</p>
+<p id="id-225"><span  class="index">【226】</span><span class="correct">[B]</span>下列不属于鸡蛋的工艺性能的是<span class="correctText">渗透性</span>。</p>
+<p id="id-226"><span  class="index">【227】</span><span class="correct">[A]</span>由于大多数<span class="correctText">粮食</span>含有较多的酸性元素，所以要特别注意多吃碱性食物，以保持生理上的酸碱平衡。</p>
+<p id="id-227"><span  class="index">【228】</span><span class="correct">[C]</span>下列中不属于肌体对热能消耗的是<span class="correctText">守卫蛋白质在体内氧化</span>。</p>
+<p id="id-228"><span  class="index">【229】</span><span class="correct">[B]</span>同一规格、质量的原料，由于加工 的不同，原料的出材率<span class="correctText">不变</span>。</p>
+<p id="id-229"><span  class="index">【230】</span><span class="correct">[C]</span>果冻液调制好后，将其温度降至室温，然后放到<span class="correctText">冷藏冰箱中冷却</span>。</p>
+<p id="id-230"><span  class="index">【231】</span><span class="correct">[A]</span>割裂制品的<span class="correctText">工具锋刃要快</span>，以免破坏制品的外观。</p>
+<p id="id-231"><span  class="index">【232】</span><span class="correct">[B]</span>卫生技术的目的是改善劳动条件、<span class="correctText">预防职业病的发生</span>。</p>
+<p id="id-232"><span  class="index">【233】</span><span class="correct">[A]</span><span class="correctText">自燃</span>是指在没有明火作用的条件下发生的燃烧。</p>
+<p id="id-233"><span  class="index">【234】</span><span class="correct">[C]</span>“Vanilla”的中文意思为<span class="correctText">香草香精</span>。</p>
+<p id="id-234"><span  class="index">【235】</span><span class="correct">[A]</span>调制全蛋黄油酱时，如果所用的鸡蛋不是很新鲜，应先把鸡蛋和糖加热至全部溶化，然后再打发。其加热的作用，一是能够完全溶解，二是能够<span class="correctText">去除鸡蛋中的部分腥味</span>。</p>
+<p id="id-235"><span  class="index">【236】</span><span class="correct">[D]</span>制作果冻的模具应用<span class="correctText">开口大</span>的模具。</p>
+<p id="id-236"><span  class="index">【237】</span><span class="correct">[C]</span>“Strawberry ”是指<span class="correctText">草莓</span>。</p>
+<p id="id-237"><span  class="index">【238】</span><span class="correct">[C]</span>无论使用哪种融化黄油的方法，都应以<span class="correctText">黄油全部溶为液体、清香透明、不变色</span>为佳。</p>
+<p id="id-238"><span  class="index">【239】</span><span class="correct">[C]</span>下列选项对矿物质的生理功能叙述不正确的是<span class="correctText">维持神经肌肉的正常兴奋</span>。</p>
+<p id="id-239"><span  class="index">【240】</span><span class="correct">[C]</span>河豚鱼体内含毒素最多的部位有<span class="correctText">血液、内脏、皮肤、卵巢</span>。</p>
+<p id="id-240"><span  class="index">【241】</span><span class="correct">[A]</span>我国规定肉制品中亚硝酸盐的残留量不得超过<span class="correctText">0.03</span>g/Kg 。</p>
+<p id="id-241"><span  class="index">【242】</span><span class="correct">[C]</span><span class="correctText">杏仁板</span>是用杏仁、砂糖加适量罗木酒或白兰地酒制成的。</p>
+<p id="id-242"><span  class="index">【243】</span><span class="correct">[B]</span>食品添加剂是指食品生产、加工、保存等过程中添加和使用的少量<span class="correctText">化学</span>合成物质或天然物质。</p>
+<p id="id-243"><span  class="index">【244】</span><span class="correct">[D]</span>蟑螂在气温<span class="correctText">24～32℃</span>时最活跃。</p>
+<p id="id-244"><span  class="index">【245】</span><span class="correct">[B]</span>面点操作间的地面应保证每班次<span class="correctText">清洁两次</span>。</p>
+<p id="id-245"><span  class="index">【246】</span><span class="correct">[C]</span>定价系数与<span class="correctText">产品成本</span>的乘积，能计算产品的售价。</p>
+<p id="id-246"><span  class="index">【247】</span><span class="correct">[A]</span><span class="correctText">糖类、脂类、蛋白质</span>在人体内氧化所产生的水叫代谢水。</p>
+<p id="id-247"><span  class="index">【248】</span><span class="correct">[C]</span>毛利额是<span class="correctText">价格与经营费用的和</span>。</p>
+<p id="id-248"><span  class="index">【249】</span><span class="correct">[B]</span>餐厅零点甜点的装盘宗旨是既要和<span class="correctText">餐厅的风格、档次</span>相适宜，又要能突出甜点的特色和风味。</p>
+<p id="id-249"><span  class="index">【250】</span><span class="correct">[D]</span>不属于放射性污染的是<span class="correctText">放射性保管食物</span>。</p>
+<p id="id-250"><span  class="index">【251】</span><span class="correct">[D]</span>下列不属于冷冻甜食的点心是<span class="correctText">泡芙</span>。</p>
+<p id="id-251"><span  class="index">【252】</span><span class="correct">[A]</span><span class="correctText">西式面点</span>英文写为westpastry,主要是指来源于欧美国家的点心。</p>
+<p id="id-252"><span  class="index">【253】</span><span class="correct">[B]</span>酸奶的英文意思是<span class="correctText">yorgurt</span>。</p>
+<p id="id-253"><span  class="index">【254】</span><span class="correct">[B]</span>由于各类排类、塔类制品内部组织材料的不同、组织密度和比重不同，因而对<span class="correctText">热能的吸收</span>和水分散发的快慢也不同，导致烘烤时的温度也不相同。</p>
+<p id="id-254"><span  class="index">【255】</span><span class="correct">[C]</span>一般成年人每日应吃到<span class="correctText">500</span>克以上的新鲜蔬菜和100～200克左右的水果。</p>
+<p id="id-255"><span  class="index">【256】</span><span class="correct">[A]</span>在许多圣诞节甜点的馅心中，所用的干果经常采用<span class="correctText">烘烤</span>进行加工。</p>
+<p id="id-256"><span  class="index">【257】</span><span class="correct">[C]</span>在家庭中和工业中发生的触电事故主要是<span class="correctText">接触电压触电</span>事故。</p>
+<p id="id-257"><span  class="index">【258】</span><span class="correct">[C]</span>如果面包配方中<span class="correctText">全部使用高筋面粉</span>，则需要适当增加水的含量。</p>
+<p id="id-258"><span  class="index">【259】</span><span class="correct">[B]</span>由于吃了含细菌毒素的食物引起的食物中毒称<span class="correctText">毒素型</span>食物中毒。</p>
+<p id="id-259"><span  class="index">【260】</span><span class="correct">[C]</span>大型展览会甜点装盘的主题、造型和 <span class="correctText">艺术性</span>，都和一般甜点装盘有根本的差异。</p>
+<p id="id-260"><span  class="index">【261】</span><span class="correct">[D]</span>鱼类脂肪“鱼油”所不具备的功能是<span class="correctText">防动脉硬化和冠心病的作用</span>。</p>
+<p id="id-261"><span  class="index">【262】</span><span class="correct">[C]</span>风味餐厅自助餐甜点装盘时，装盘的<span class="correctText">式样</span>、风格、色彩等要和餐厅的风格一致。</p>
+<p id="id-262"><span  class="index">【263】</span><span class="correct">[C]</span>出材率与<span class="correctText">损耗率</span>的和等于100%。</p>
+<p id="id-263"><span  class="index">【264】</span><span class="correct">[C]</span><span class="correctText">清蛋糕</span>是用全蛋、糖搅打与面粉混合一起制成的膨松制品。</p>
+<p id="id-264"><span  class="index">【265】</span><span class="correct">[A]</span>从根本上说加强社会主义职业道德是发展<span class="correctText">市场经济</span>是内在的客观要求。</p>
+<p id="id-265"><span  class="index">【266】</span><span class="correct">[B]</span>各种产品的各项耗费之和是<span class="correctText">广义成本</span>的概念。</p>
+<p id="id-266"><span  class="index">【267】</span><span class="correct">[D]</span>在电气设备故障情况下，必须有<span class="correctText">自动切断供电</span>、电气隔离等点击防护措施。</p>
+<p id="id-267"><span  class="index">【268】</span><span class="correct">[D]</span>嗜盐菌又称<span class="correctText">副溶血性弧菌</span>。</p>
+<p id="id-268"><span  class="index">【269】</span><span class="correct">[C]</span>刮黄油球时应掌握好黄油的<span class="correctText">软硬度</span>。</p>
+<p id="id-269"><span  class="index">【270】</span><span class="correct">[C]</span>下列不是面团的面筋质所起的作用的是<span class="correctText">提高面团的可塑性</span>。</p>
+<p id="id-270"><span  class="index">【271】</span><span class="correct">[D]</span>下列对科学膳食制度的原则的叙述中正确的是<span class="correctText">满足用餐者生理和各种活动的需要</span>。</p>
+<p id="id-271"><span  class="index">【272】</span><span class="correct">[B]</span>结力是<span class="correctText">jelly</span>的译音。</p>
+<p id="id-272"><span  class="index">【273】</span><span class="correct">[D]</span><span class="correctText">道德</span>是以善恶为评价标准。</p>
+<p id="id-273"><span  class="index">【274】</span><span class="correct">[B]</span>白酒中所含的<span class="correctText">醇</span>是引起醉酒的重要因素之一，对人体健康不利。</p>
+<p id="id-274"><span  class="index">【275】</span><span class="correct">[D]</span>食品造型创作的主题一方面来自于<span class="correctText">食品自身的特点</span>，另一方面来自于创作者利用自身的情感进行造型创作的艺术加工。</p>
+<p id="id-275"><span  class="index">【276】</span><span class="correct">[A]</span><span class="correctText">风登糖</span>又称翻砂糖、封糖、白毛粉。</p>
+<p id="id-276"><span  class="index">【277】</span><span class="correct">[C]</span>在调制糖水黄油酱时，下列操作错误的是<span class="correctText">等黄油搅白后，将糖水全部倒入搅拌缸内，继续搅打</span>。</p>
+<p id="id-277"><span  class="index">【278】</span><span class="correct">[D]</span>“Flour是指<span class="correctText">面粉</span>。</p>
+<p id="id-278"><span  class="index">【279】</span><span class="correct">[C]</span>下列选项中属于胃液主要成分的是<span class="correctText">盐酸</span>。</p>
+<p id="id-279"><span  class="index">【280】</span><span class="correct">[B]</span>果冻是用<span class="correctText">糖、水</span>和鱼胶或琼脂，按一定比例调制而成的冷冻甜食。</p>
+<p id="id-280"><span  class="index">【281】</span><span class="correct">[B]</span>下列选项中蛋白质最好的食物来源是<span class="correctText">鱼类</span>。</p>
+<p id="id-281"><span  class="index">【282】</span><span class="correct">[C]</span>天使蛋糕面糊中，蛋清、糖、面粉分别占面糊重量的<span class="correctText">42%、42%、15%</span>。</p>
+<p id="id-282"><span  class="index">【283】</span><span class="correct">[B]</span>下列行为符合面点操作间的卫生要求的是<span class="correctText">每班次严格清洗一次屉布，并晾干</span>。</p>
+<p id="id-283"><span  class="index">【284】</span><span class="correct">[D]</span>未经卫生部门许可，<span class="correctText">孕妇及乳母</span>食品中不得使用食品添加剂。</p>
+<p id="id-284"><span  class="index">【285】</span><span class="correct">[D]</span>蛋黄没有起泡性，但蛋黄与蛋白一起搅拌，对于蛋黄的作用下列说法错误的是<span class="correctText">使蛋白更易打发</span>。</p>
+<p id="id-285"><span  class="index">【286】</span><span class="correct">[D]</span>小型酒会甜点大都以<span class="correctText">量少而精</span>著称。</p>
+<p id="id-286"><span  class="index">【287】</span><span class="correct">[A]</span>在给面包坯表面刷蛋糕液时，刷蛋液的动作要<span class="correctText">轻柔</span>。</p>
+<p id="id-287"><span  class="index">【288】</span><span class="correct">[A]</span>下列说法错误的是<span class="correctText">如果搅拌面团时，加入葡萄干后，应多搅拌一段时间</span>。</p>
+<p id="id-288"><span  class="index">【289】</span><span class="correct">[A]</span>尽职尽责的关键是<span class="correctText">尽</span>。</p>
+<p id="id-289"><span  class="index">【290】</span><span class="correct">[A]</span>宇宙射线和地球上的放射线是食物中<span class="correctText">放射性</span>物质的来源。</p>
+<p id="id-290"><span  class="index">【291】</span><span class="correct">[B]</span>下面描述中，烘烤的清蛋糕可能为成熟的是<span class="correctText">用牙签插入蛋糕中央，拔出后不粘面糊</span>。</p>
+<p id="id-291"><span  class="index">【292】</span><span class="correct">[D]</span><span class="correctText">清蛋糕</span>成型时选择模具的范围比较广泛，可根据需要掌握。</p>
+<p id="id-292"><span  class="index">【293】</span><span class="correct">[A]</span><span class="correctText">即将电饭锅进行可靠的 保护</span>是符合设备安全可靠的接地保护。</p>
+<p id="id-293"><span  class="index">【294】</span><span class="correct">[D]</span><span class="correctText">病人与健康人不直接传染</span>不是食物中毒的特征。</p>
+<p id="id-294"><span  class="index">【295】</span><span class="correct">[D]</span><span class="correctText">49 岁以下成人体重</span>的一般计算方法是：正常体重＝（身高-100）±10。</p>
+<p id="id-295"><span  class="index">【296】</span><span class="correct">[C]</span>重宴会甜点的装盘，一般要求盘子的<span class="correctText">风格</span>应甜点的特性品质相适应。</p>
+<p id="id-296"><span  class="index">【297】</span><span class="correct">[A]</span>制作出来的杏仁塔要求塔底薄厚均匀，<span class="correctText">成品大小、颜色金黄一致</span>，制品表面有光亮，口感酥软，口味哟淡淡的杏仁香味。</p>
+<p id="id-297"><span  class="index">【298】</span><span class="correct">[B]</span><span class="correctText">道德</span>是以善恶为评价标准。</p>
+<p id="id-298"><span  class="index">【299】</span><span class="correct">[A]</span>在燃烧过程中，燃气喷离火孔的速度大于<span class="correctText">燃烧速度</span>，火焰难以维持稳定，甚至熄灭，这种现象称为“脱火”。</p>
+<p id="id-299"><span  class="index">【300】</span><span class="correct">[D]</span>《中华人民共和国食品卫生法》将我国长期以来实行的行之有效的<span class="correctText">食品卫生</span>工作方针、政策，用法律的形式确定下来。</p>
+<p id="id-300"><span  class="index">【301】</span><span class="correct">[A]</span>对于一个面点间员工，下列着装只有一处错误的是<span class="correctText">帽子不干净、不刮胡须、纽扣齐全、领带整洁</span>。</p>
+<p id="id-301"><span  class="index">【302】</span><span class="correct">[B]</span>某产品售价45 元，成本18 元，此产品的成本毛利率是<span class="correctText">0.6</span>。</p>
+<p id="id-302"><span  class="index">【303】</span><span class="correct">[B]</span>干木耳200 克，经加工的600 克水发，此木耳的涨发率是<span class="correctText">3</span>。</p>
+<p id="id-303"><span  class="index">【304】</span><span class="correct">[C]</span>果冻配方中的结力用量决定了果冻定型<span class="correctText">所需的时间</span>。</p>
+<p id="id-304"><span  class="index">【305】</span><span class="correct">[A]</span>清蛋糕的膨松主要是靠<span class="correctText">蛋白搅打的气泡作用</span>作用而形成的。</p>
+<p id="id-305"><span  class="index">【306】</span><span class="correct">[A]</span>蛋糕的英文名称为<span class="correctText">cake</span>。</p>
+<p id="id-306"><span  class="index">【307】</span><span class="correct">[D]</span>下列中属于半完全性蛋白质的是<span class="correctText">稻米</span>。</p>
+<p id="id-307"><span  class="index">【308】</span><span class="correct">[B]</span>由于清蛋糕面糊中所使用的<span class="correctText">鸡蛋成分</span>不同，因此清蛋糕有天使蛋糕盒全蛋海绵蛋糕之分。</p>
+<p id="id-308"><span  class="index">【309】</span><span class="correct">[C]</span>在面团搅拌中，<span class="correctText">氧化</span>作用使面团中蛋白质的硫氢键被氧化成分子间的双硫键，使面筋形成三维空间结构。</p>
+<p id="id-309"><span  class="index">【310】</span><span class="correct">[D]</span>对于夹有馅心的混酥制品，入炉之前要在制品表面扎些透气眼，以利于烘烤时<span class="correctText">水气的溢出</span>。</p>
+<p id="id-310"><span  class="index">【311】</span><span class="correct">[B]</span>下列选项对矿物质的生理功能叙述中不正确的是<span class="correctText">促进体内钙和磷的代谢</span>。</p>
+<p id="id-311"><span  class="index">【312】</span><span class="correct">[B]</span>泡夫用英文表示为<span class="correctText">creampuff</span>。</p>
+<p id="id-312"><span  class="index">【313】</span><span class="correct">[A]</span>膳食中缺铁，可患<span class="correctText">贫血</span>。</p>
+<p id="id-313"><span  class="index">【314】</span><span class="correct">[D]</span>下列黄油的加工方法不常用于面包配餐的是<span class="correctText">溶化</span>。</p>
+<p id="id-314"><span  class="index">【315】</span><span class="correct">[A]</span>果冻的质量标准要求果冻<span class="correctText">形态完整</span>、透明有光泽，制品软硬适中，口感湿润。</p>
+<p id="id-315"><span  class="index">【316】</span><span class="correct">[B]</span><span class="correctText">Revolvingoven</span>是转炉的英文名称。</p>
+<p id="id-316"><span  class="index">【317】</span><span class="correct">[A]</span>下列选项对维生素的生理功能叙述中正确的是<span class="correctText">促进体内钙和磷的代谢</span>。</p>
+<p id="id-317"><span  class="index">【318】</span><span class="correct">[D]</span>打发是指<span class="correctText">蛋液</span>或黄油经搅打体积增大的方法。</p>
+<p id="id-318"><span  class="index">【319】</span><span class="correct">[C]</span>下列不属于化学膨松剂的是<span class="correctText">干酵母</span>。</p>
+<p id="id-319"><span  class="index">【320】</span><span class="correct">[C]</span>厨房、餐厅不易推广的灭鼠方法是<span class="correctText">化学灭鼠</span>。</p>
+<p id="id-320"><span  class="index">【321】</span><span class="correct">[C]</span>含大量饱和脂肪酸的脂肪油：<span class="correctText">猪油</span>。</p>
+<p id="id-321"><span  class="index">【322】</span><span class="correct">[C]</span>一般成年人每人应吃到<span class="correctText">500</span>克以上的新鲜蔬菜和100～200克左右的水果。</p>
+<p id="id-322"><span  class="index">【323】</span><span class="correct">[D]</span>对于风味餐厅来讲，自助餐台上的所有食品都要突出餐厅的<span class="correctText">豪华</span>和品味。</p>
+<p id="id-323"><span  class="index">【324】</span><span class="correct">[B]</span>一般混合食物每生热4.184 千焦耳约可产生<span class="correctText">20</span>毫升的水。</p>
+<p id="id-324"><span  class="index">【325】</span><span class="correct">[D]</span>不属于食品污染危害的是<span class="correctText">内分泌腺紊乱</span>。</p>
+<p id="id-325"><span  class="index">【326】</span><span class="correct">[C]</span>清蛋糕面糊搅拌时要合理控制搅拌温度，温度过低，蛋液<span class="correctText">黏性较大，搅拌时不易带入空气</span>。</p>
+<p id="id-326"><span  class="index">【327】</span><span class="correct">[A]</span>成本系数是指<span class="correctText">原料加工前单位成本与加工后单位成本</span>的比值。</p>
+<p id="id-327"><span  class="index">【328】</span><span class="correct">[C]</span>“ Vanilla”的中文意思为<span class="correctText">香草香精</span>。</p>
+<p id="id-328"><span  class="index">【329】</span><span class="correct">[B]</span>植物脂奶油所需打发时间<span class="correctText">长于</span>动物脂奶油所需打发时间。</p>
+<p id="id-329"><span  class="index">【330】</span><span class="correct">[A]</span>营养强化剂遇<span class="correctText">水</span>一般不会被破坏。</p>
+<p id="id-330"><span  class="index">【331】</span><span class="correct">[C]</span>在面点操作间的卫生制度中，要求面点间员工必须持有健康证、<span class="correctText">体检合格证</span>。</p>
+<p id="id-331"><span  class="index">【332】</span><span class="correct">[D]</span>布丁是以<span class="correctText">白糖、鸡蛋、水、明胶</span>等为主要原料，配以辅料，通过蒸或烤制成的一类柔软的甜点心。</p>
+<p id="id-332"><span  class="index">【333】</span><span class="correct">[D]</span>不属于包装材料污染的有毒物质是<span class="correctText">粮仓中的放射线元素</span>。</p>
+<p id="id-333"><span  class="index">【334】</span><span class="correct">[D]</span>宴会套餐甜点装盘时，甜点主体应在圆盘的<span class="correctText">下方偏右</span>。</p>
+<p id="id-334"><span  class="index">【335】</span><span class="correct">[A]</span>利用<span class="correctText">直接发酵</span>的方法调制面包面团时，其搅拌的时间比正常搅拌时间长，发酵时间一般在30～40分钟左右即可。</p>
+<p id="id-335"><span  class="index">【336】</span><span class="correct">[D]</span><span class="correctText">餐厅零点</span>一般多用瓷制餐盘盛装。</p>
+<p id="id-336"><span  class="index">【337】</span><span class="correct">[D]</span>制作混坯面坯时，如果面粉筋度太高，则在搅拌面团和整形过程中易揉捏出筋，使之在烘烤中<span class="correctText">面坯发生收缩现象</span>，产品坚硬，失去应有的松酥的品质。</p>
+<p id="id-337"><span  class="index">【338】</span><span class="correct">[A]</span>下列属于冷冻甜食的点心是<span class="correctText">木司</span>。</p>
+<p id="id-338"><span  class="index">【339】</span><span class="correct">[D]</span>面团搅拌的物理效应主要体现在两个方面，一方面是通过搅拌作用促使面粉水化完全，形成面筋；又使面筋得到扩展，成为既有弹性又有延伸性的面团，另一方面的<span class="correctText">由于搅拌使面团光滑</span>。</p>
+<p id="id-339"><span  class="index">【340】</span><span class="correct">[D]</span>塔是以油酥面团为坯料，借助模具，通过制坯、烘烤、装饰等工艺制成的内盛水果或馅料的一类<span class="correctText">较小型</span>的点心。</p>
+<p id="id-340"><span  class="index">【341】</span><span class="correct">[D]</span>一般情况，批量大、单位成本低的餐饮产品毛利率<span class="correctText">从低</span>。</p>
+<p id="id-341"><span  class="index">【342】</span><span class="correct">[C]</span>混酥面坯制成后，应放到冷藏冰箱中冷却，其目的是：一是使面团内部水分能充分均匀吸收,二是<span class="correctText">促使黄油凝固，易于面坯成型</span>，三是能使上劲的面团得到松弛。</p>
+<p id="id-342"><span  class="index">【343】</span><span class="correct">[A]</span>人们对某人某事的评论，称为<span class="correctText">社会舆论</span>。</p>
+<p id="id-343"><span  class="index">【344】</span><span class="correct">[B]</span>姜中的挥发油所不含的成分为<span class="correctText">姜酸</span>。</p>
+<p id="id-344"><span  class="index">【345】</span><span class="correct">[D]</span>谷类的糊粉层中含<span class="correctText">淀粉</span>较多。</p>
+<p id="id-345"><span  class="index">【346】</span><span class="correct">[B]</span>净单位成本计算的基本条件有<span class="correctText">4 条</span>。</p>
+<p id="id-346"><span  class="index">【347】</span><span class="correct">[A]</span>打发奶油的最佳室温在<span class="correctText">7～10℃</span>。</p>
+<p id="id-347"><span  class="index">【348】</span><span class="correct">[D]</span>同一规格、质量的原料，由于加工技术的不同，原料出材率<span class="correctText">不一定相同</span>。</p>
+<p id="id-348"><span  class="index">【349】</span><span class="correct">[C]</span>如果不经过中间醒置立即成型，则会出现<span class="correctText">面团弹性太强，不易操作</span>。</p>
+<p id="id-349"><span  class="index">【350】</span><span class="correct">[A]</span>空调设备是指可以对空气进行温度、<span class="correctText">湿度</span>、洁净度和气流组织等处理的专门设备。</p>
+<p id="id-350"><span  class="index">【351】</span><span class="correct">[B]</span>使鱼、牛肉表面变红、发黏的菌属是<span class="correctText">沙雷氏菌属</span>。</p>
+<p id="id-351"><span  class="index">【352】</span><span class="correct">[B]</span>由化学、物理、生物性因素引发的人类恶性肿瘤称为<span class="correctText">致癌</span>作用。</p>
+<p id="id-352"><span  class="index">【353】</span><span class="correct">[A]</span>下列不属于食物中毒现场处理范围的选项是<span class="correctText">对患者家属进行赔偿</span>。</p>
+<p id="id-353"><span  class="index">【354】</span><span class="correct">[D]</span>我国规定棉籽油中游离面酚的含量不得超过<span class="correctText">0.0003</span>。</p>
+<p id="id-354"><span  class="index">【355】</span><span class="correct">[A]</span>-1℃左右，保存5～14天的鱼称为<span class="correctText">冷却鱼</span>。</p>
+<p id="id-355"><span  class="index">【356】</span><span class="correct">[C]</span>未经卫生部门许可，<span class="correctText">婴幼儿及儿童</span>食品中不得使用食品添加剂。</p>
+<p id="id-356"><span  class="index">【357】</span><span class="correct">[C]</span>含不饱和脂肪酸多的脂肪是<span class="correctText">大豆油</span>。</p>
+<p id="id-357"><span  class="index">【358】</span><span class="correct">[B]</span>下列选项中属于必需氨基酸的是<span class="correctText">蛋氨酸</span>。</p>
+<p id="id-358"><span  class="index">【359】</span><span class="correct">[A]</span>黄昏时视物不清，是由于体内缺少<span class="correctText">维生素a</span>。</p>
+<p id="id-359"><span  class="index">【360】</span><span class="correct">[C]</span>下列元素中属于常微量元素的是<span class="correctText">钙、钾、钠、镁</span>。</p>
+<p id="id-360"><span  class="index">【361】</span><span class="correct">[A]</span>下列中科学的喝水方法是<span class="correctText">清晨空腹喝一杯凉开水</span>。</p>
+<p id="id-361"><span  class="index">【362】</span><span class="correct">[D]</span><span class="correctText">49岁以下成人体重</span>的一般计算方法是：正常体重﹦（身高-100）±10%。</p>
+<p id="id-362"><span  class="index">【363】</span><span class="correct">[A]</span>下列选项中属于胃液主要成分的是<span class="correctText">胃蛋白酶</span>。</p>
+<p id="id-363"><span  class="index">【364】</span><span class="correct">[A]</span>下列选项中叙述不正确的是：用老母鸡煨汤比小鸡仔、家畜煨汤味道鲜美的原因是<span class="correctText">成年动物肉比小动物肉含氮物质少</span>。</p>
+<p id="id-364"><span  class="index">【365】</span><span class="correct">[D]</span>昆虫食品具有<span class="correctText">脂肪</span>含量低的特点。</p>
+<p id="id-365"><span  class="index">【366】</span><span class="correct">[D]</span>自然界没有一种食物含有人类需要的全部<span class="correctText">脂肪</span>。</p>
+<p id="id-366"><span  class="index">【367】</span><span class="correct">[D]</span><span class="correctText">广义成本</span>是指构成产品的各项耗费之和。</p>
+<p id="id-367"><span  class="index">【368】</span><span class="correct">[D]</span>保证加工制作的<span class="correctText">用料标准尺度</span>，是保证成本核算工作顺利进行的基本条件之一。</p>
+<p id="id-368"><span  class="index">【369】</span><span class="correct">[A]</span><span class="correctText">损耗率</span>不是出材率的同类名称。</p>
+<p id="id-369"><span  class="index">【370】</span><span class="correct">[D]</span>原料的出材率高低可以考核操作人员的<span class="correctText">技术水平</span>。</p>
+<p id="id-370"><span  class="index">【371】</span><span class="correct">[C]</span>净料单位成本计算的基本条件有<span class="correctText">3条</span>。</p>
+<p id="id-371"><span  class="index">【372】</span><span class="correct">[C]</span><span class="correctText">加工后净料单位成本</span>等于成本系数乘以原料购进价。</p>
+<p id="id-372"><span  class="index">【373】</span><span class="correct">[D]</span>常见的菜点定价方法有“随行就市”法、毛利率法和<span class="correctText">系数定价法</span>。</p>
+<p id="id-373"><span  class="index">【374】</span><span class="correct">[D]</span>某产品售价75 元，销售毛利率60%，此产品的毛利额是<span class="correctText">60元</span>。</p>
+<p id="id-374"><span  class="index">【375】</span><span class="correct">[C]</span>下列属于间接性安全计算措施的是<span class="correctText">电器设备的漏电保护装置</span>。</p>
+<p id="id-375"><span  class="index">【376】</span><span class="correct">[C]</span>下列中属于不正常燃烧的是<span class="correctText">回火</span>。</p>
+<p id="id-376"><span  class="index">【377】</span><span class="correct">[A]</span>厨房消防设备主要由消防给水系统和<span class="correctText">化学灭火设备</span>组成。</p>
+<p id="id-377"><span  class="index">【378】</span><span class="correct">[C]</span>国家对压力容器的生产、安装、使用等有严格的限制，其中<span class="correctText">运输</span>压力容器不属于限制的项目。</p>
+<p id="id-378"><span  class="index">【379】</span><span class="correct">[D]</span>下列中说法错误的是<span class="correctText">所有的通风设备应有警示标志</span>。</p>
+<p id="id-379"><span  class="index">【380】</span><span class="correct">[C]</span>“Whisk”是指<span class="correctText">抽打</span>的意思。</p>
+<p id="id-380"><span  class="index">【381】</span><span class="correct">[C]</span>“Agar”是指<span class="correctText">琼脂</span>。</p>
+<p id="id-381"><span  class="index">【382】</span><span class="correct">[C]</span>“pudding”是指<span class="correctText">布丁</span>。</p>
+<p id="id-382"><span  class="index">【383】</span><span class="correct">[B]</span>按<span class="correctText">点心加工工艺及坯料性质</span>分类，可将西点分为蛋糕类、混酥类、面包类、泡夫类、饼干类、冷冻甜食类、巧克力等。</p>
+<p id="id-383"><span  class="index">【384】</span><span class="correct">[D]</span>跑油是指面坯中的<span class="correctText">油脂</span>从水面皮层溢出。</p>
+<p id="id-384"><span  class="index">【385】</span><span class="correct">[D]</span>札干是制作<span class="correctText">大型点心模型</span>、展品的主要原料。</p>
+<p id="id-385"><span  class="index">【386】</span><span class="correct">[B]</span>面点间员工个人着装要干净、整齐，不露发迹，工作服、工作帽穿戴工整，系好<span class="correctText">围裙</span>。</p>
+<p id="id-386"><span  class="index">【387】</span><span class="correct">[C]</span>由于<span class="correctText">淀粉和蛋白质</span>的存在，面粉在制品中起着“骨架”作用，能使面坯在成熟过程中形成稳定的组织结构。</p>
+<p id="id-387"><span  class="index">【388】</span><span class="correct">[B]</span>油脂的<span class="correctText">游离性</span>与温度有关，温度越高，其性能作用越大。</p>
+<p id="id-388"><span  class="index">【389】</span><span class="correct">[B]</span>引起蛋类变质的原因主要有贮存温度、湿度、蛋壳气孔及<span class="correctText">蛋内的酶</span>。</p>
+<p id="id-389"><span  class="index">【390】</span><span class="correct">[B]</span>需冷冻的奶油在打发之前，应放在<span class="correctText">0～4℃冰箱</span>解冻24～28小时以上。</p>
+<p id="id-390"><span  class="index">【391】</span><span class="correct">[B]</span>调制全蛋黄油酱时，如果所用的鸡蛋不是很新鲜，可以在打发鸡蛋和糖之前<span class="correctText">把鸡蛋和糖加热至糖全部溶化，然后打发</span>，这样可使制品得到改善。</p>
+<p id="id-391"><span  class="index">【392】</span><span class="correct">[C]</span>塔是以<span class="correctText">油酥面团</span>为坯料，借助模具，通过制坯、烘烤、装饰等工艺制成的内盛水果或馅料的一类较小型的点心。</p>
+<p id="id-392"><span  class="index">【393】</span><span class="correct">[C]</span>混酥面坯中<span class="correctText">面粉</span>比例越高，酥松性越差。</p>
+<p id="id-393"><span  class="index">【394】</span><span class="correct">[A]</span>制作混坯面坯时，如果面粉筋度太高，则在搅拌面团和整形过程中<span class="correctText">易揉捏出筋</span>，使之在烘烤中面皮发生收缩现象，产品坚硬，失去应 有的松酥的品质。</p>
+<p id="id-394"><span  class="index">【395】</span><span class="correct">[A]</span>混酥面坯制成后，应放到冷藏冰箱中冷却，其目的是：一是使面团内部水分能充分均匀吸收，二是促使黄油凝固，易于面坯成型，三是能使<span class="correctText">上劲的面团得到松弛</span>。</p>
+<p id="id-395"><span  class="index">【396】</span><span class="correct">[D]</span>清蛋糕是用全蛋、糖搅打与面粉混合一起制成的<span class="correctText">膨松制品</span>。</p>
+<p id="id-396"><span  class="index">【397】</span><span class="correct">[B]</span>打发是指蛋液或<span class="correctText">黄油</span>经搅打体积增大的方法。</p>
+<p id="id-397"><span  class="index">【398】</span><span class="correct">[A]</span>巴菲是一种以<span class="correctText">鸡蛋</span>和奶油为主要原料的冷冻甜食。</p>
+<p id="id-398"><span  class="index">【399】</span><span class="correct">[A]</span>结力是一种<span class="correctText">有机化合物</span>，呈无色或淡黄色的半透明颗粒、簿片或粉末状。</p>
+<p id="id-399"><span  class="index">【400】</span><span class="correct">[A]</span>果冻的一般用料是<span class="correctText">果汁、结力、牛奶、水、糖</span>等。</p>
+<p id="id-400"><span  class="index">【401】</span><span class="correct">[C]</span>面团的搅拌过程中，由于搅拌产生的<span class="correctText">摩擦热</span>，使面团的温度升高。</p>
+<p id="id-401"><span  class="index">【402】</span><span class="correct">[C]</span>下列现象属于面团搅拌过度的是<span class="correctText">触摸面团，面团过分湿润，粘手</span>。</p>
+<p id="id-402"><span  class="index">【403】</span><span class="correct">[A]</span>糖能促进酵母繁殖，但糖的含量超过6%时，<span class="correctText">糖的渗透性</span>则会使酵母发酵受到抑制，发酵的速度变得缓慢。</p>
+<p id="id-403"><span  class="index">【404】</span><span class="correct">[D]</span>利用<span class="correctText">快速发酵</span>的方法调制面包面团时，其搅拌的时间比正常搅拌时间长，发酵时间一般在30～40分钟即可。</p>
+<p id="id-404"><span  class="index">【405】</span><span class="correct">[C]</span>当选用<span class="correctText">金属模具</span>作为清蛋糕的成型工具，填充面糊时应适当多放一些。</p>
+<p id="id-405"><span  class="index">【406】</span><span class="correct">[B]</span>一般来讲，果冻的成型不用大型的或结构复杂的模具，这是因为<span class="correctText">冷却后倒模困难，易破坏果冻的形态</span>。</p>
+<p id="id-406"><span  class="index">【407】</span><span class="correct">[B]</span>下列不属于面包最后醒发的目的的是<span class="correctText">为使得到的制品有好的色泽</span>。</p>
+<p id="id-407"><span  class="index">【408】</span><span class="correct">[D]</span>在使用不粘胶垫烘烤蛋糕卷时，需要<span class="correctText">将底火略调高一些</span>，这烘烤出来的成品才能颜色一致，柔软适中。</p>
+<p id="id-408"><span  class="index">【409】</span><span class="correct">[C]</span><span class="correctText">精致典雅</span>是酒会甜点装盘的宗旨。</p>
+<p id="id-409"><span  class="index">【410】</span><span class="correct">[A]</span>大型展览会甜点装盘的<span class="correctText">主题、造型</span>及艺术性，都和一般甜点装盘有根本的差异。</p>
+<p id="id-410"><span  class="index">【411】</span><span class="correct">[D]</span>装饰造型类制品具有食用和<span class="correctText">欣赏</span>双重价值。</p>
+<p id="id-411"><span  class="index">【412】</span><span class="correct">[B]</span>炭疽杆菌不耐热，60℃时即可被杀死，但形成芽孢后在<span class="correctText">120℃</span>才能被杀死。</p>
+<p id="id-412"><span  class="index">【413】</span><span class="correct">[C]</span>下列元素中属于常量元素的是<span class="correctText">钙、钾、钠、镁</span>。</p>
+<p id="id-413"><span  class="index">【414】</span><span class="correct">[B]</span>下列不是水在面包生产中所起的作用的是<span class="correctText">使面粉的蛋白质充分吸水，形成面筋网络</span>。</p>
+<p id="id-414"><span  class="index">【415】</span><span class="correct">[D]</span>面团分割一般有手工分割和机器分割两种，手工分割有利于<span class="correctText">保护面坯内的面筋质</span>。</p>
+<p id="id-415"><span  class="index">【416】</span><span class="correct">[A]</span>由致病菌本身引起的食物中毒称<span class="correctText">感染型</span>食物中毒。</p>
+<p id="id-416"><span  class="index">【417】</span><span class="correct">[B]</span>谷类在正常贮存期内，<span class="correctText">维生素</span>的含量不会发生变化。</p>
+<p id="id-417"><span  class="index">【418】</span><span class="correct">[C]</span>总的来说，大型展览会甜点装盘方法，以突出<span class="correctText">造型和艺术感染力</span>为主，通过造型各异的甜点，展示出著作者的精巧技艺和艺术创造力。</p>
+<p id="id-418"><span  class="index">【419】</span><span class="correct">[B]</span>系数定价法是以<span class="correctText">成本</span>为出发点的定价方法。</p>
+<p id="id-419"><span  class="index">【420】</span><span class="correct">[B]</span><span class="correctText">加工精细的产品</span>毛利率应从高。</p>
+<p id="id-420"><span  class="index">【421】</span><span class="correct">[C]</span>巴菲是<span class="correctText">parfait</span>的译音。</p>
+<p id="id-421"><span  class="index">【422】</span><span class="correct">[C]</span>清酥类是在用水调面坯、油面坯互为表里，经反复<span class="correctText">擀叠</span>、冷冻形成新面坯的基础上，经加工而成的一类层次清晰、松酥的点心。</p>
+<p id="id-422"><span  class="index">【423】</span><span class="correct">[D]</span>新生儿体内含水量约占体重的<span class="correctText">0.8</span>左右。</p>
+<p id="id-423"><span  class="index">【424】</span><span class="correct">[D]</span>使用面点加工设备前应对机器的<span class="correctText">电气</span>和机械部分进行检查。</p>
+<p id="id-424"><span  class="index">【425】</span><span class="correct">[A]</span>生奶的抑菌作用在0℃时可保持<span class="correctText">48</span>小时，30℃时仅可保持3 小时。</p>
+<p id="id-425"><span  class="index">【426】</span><span class="correct">[C]</span>液化石油气必须放在<span class="correctText">低温干燥</span>的装用房间。</p>
+<p id="id-426"><span  class="index">【427】</span><span class="correct">[A]</span>原料损耗重量与加工前原料重量的比是<span class="correctText">损耗率</span>。</p>
+<p id="id-427"><span  class="index">【428】</span><span class="correct">[A]</span>肌体<span class="correctText">肺的呼吸</span>消耗的能量是基础代谢消耗的能量。</p>
+<p id="id-428"><span  class="index">【429】</span><span class="correct">[A]</span>操作人员要随时注意电气设备的运转情况，发现异常情况要立刻<span class="correctText">停电</span>。</p>
+<p id="id-429"><span  class="index">【430】</span><span class="correct">[D]</span>被有毒有害物质污染的食品引起食物中毒，不包括<span class="correctText">正常摄入数量</span>的食物。</p>
+<p id="id-430"><span  class="index">【431】</span><span class="correct">[A]</span>肉类脂肪含<span class="correctText">饱和脂肪酸</span>较多。</p>
+<p id="id-431"><span  class="index">【432】</span><span class="correct">[C]</span><span class="correctText">打发</span>是指蛋液或黄油经搅打体积增大的方法。</p>
+<p id="id-432"><span  class="index">【433】</span><span class="correct">[D]</span>制作清蛋糕面糊的面粉宜用低筋粉，如果没有低筋粉，可用等量的<span class="correctText">玉米粉</span>代替部分面粉。</p>
+<p id="id-433"><span  class="index">【434】</span><span class="correct">[B]</span>下列说法中错误的是<span class="correctText">为了将碗洗得更干净，将洗涤剂的投放量加大</span>。</p>
+<p id="id-434"><span  class="index">【435】</span><span class="correct">[A]</span>一般混合食物每生热4.184 千焦耳约可产生<span class="correctText">12</span>毫升的水。</p>
+<p id="id-435"><span  class="index">【436】</span><span class="correct">[B]</span>重要宴会的甜点盘，一般都在直径25 厘米左右，多为西式<span class="correctText">白瓷圆盘</span>或欧式花圆盘。</p>
+<p id="id-436"><span  class="index">【437】</span><span class="correct">[B]</span>餐饮销售与利润的差，构成餐饮产品的<span class="correctText">成本</span>。</p>
+<p id="id-437"><span  class="index">【438】</span><span class="correct">[B]</span>冷冻甜品以<span class="correctText">甜</span>为主，口味清香爽口。</p>
+<p id="id-438"><span  class="index">【439】</span><span class="correct">[C]</span>蛋糕类包括清蛋糕、油蛋糕、<span class="correctText">艺术蛋糕</span>和风味蛋糕。</p>
+<p id="id-439"><span  class="index">【440】</span><span class="correct">[A]</span>面包面团经过中间醒置后，体积慢慢恢复膨大，质地逐渐变软，这时即可进行面包的<span class="correctText">成形</span>操作。</p>
+<p id="id-440"><span  class="index">【441】</span><span class="correct">[D]</span>膳食指度是指把全天的<span class="correctText">食物</span>按一定的 次数、一定时间间隔和一定数量、质量分配到各餐的一种制度。</p>
+<p id="id-441"><span  class="index">【442】</span><span class="correct">[A]</span>我国规定肉制品中亚硝酸盐的残留量不得超过<span class="correctText">0.03</span>g/Kg。</p>
+<p id="id-442"><span  class="index">【443】</span><span class="correct">[A]</span>销售毛利率法计算产品价格的公式是原料成本与<span class="correctText">1＋销售毛利率</span>的比值。</p>
+<p id="id-443"><span  class="index">【444】</span><span class="correct">[A]</span>塔的英文名称是<span class="correctText">tart</span>。</p>
+<p id="id-444"><span  class="index">【445】</span><span class="correct">[C]</span>在大型宴会自助餐上，给果冻、鲜果沙拉选用盘来装盘时，要力争做到<span class="correctText">从整体到局部再到个体的统一、和谐</span>，各种甜点与配盘相互呼应、相得益彰。</p>
+<p id="id-445"><span  class="index">【446】</span><span class="correct">[A]</span>为了确保果冻应有的造型和食用质量，我们使用果冻模具时，大多应用<span class="correctText">小的、简单</span>的模具。</p>
+<p id="id-446"><span  class="index">【447】</span><span class="correct">[A]</span>制作混酥面坯，不宜选用的糖制品是<span class="correctText">粗砂糖</span>。</p>
+<p id="id-447"><span  class="index">【448】</span><span class="correct">[A]</span>果冻是用糖、水和鱼胶粉或琼脂，按一定比例调制而成的<span class="correctText">冷冻甜食</span>。</p>
+<p id="id-448"><span  class="index">【449】</span><span class="correct">[D]</span>麦角固醇不能被人吸收，但在日光照射后，可转变为能被人体吸收的<span class="correctText">维生素K</span>。</p>
+<p id="id-449"><span  class="index">【450】</span><span class="correct">[C]</span>马司板是用<span class="correctText">杏仁、砂糖</span>加适量罗木酒或白兰地酒制成的。</p>
+<p id="id-450"><span  class="index">【451】</span><span class="correct">[D]</span>在调制糖水黄油酱时，等黄油搅白后，要分次逐渐加入糖水，以防<span class="correctText">黄油酱变黄、搅澥</span>。</p>
+<p id="id-451"><span  class="index">【452】</span><span class="correct">[C]</span>混酥面坯制成后，应放到冷藏冰箱中冷却，其目的是：于是使面团内部水分能充分均匀吸收，二是<span class="correctText">促使黄油凝固，易于面坯成型</span>，三是能使上劲的面团得到松弛。</p>
+<p id="id-452"><span  class="index">【453】</span><span class="correct">[B]</span>在制作苹果卷、杏仁片酥饼干中，其中黄油是使用的<span class="correctText">溶化</span>加工方法后加入制品。</p>
+<p id="id-453"><span  class="index">【454】</span><span class="correct">[D]</span>下列对维生素的共同特点叙述中不正确的是<span class="correctText">肌体对维生素的需要量较多，却乏时可引起维生素缺乏症</span>。</p>
+<p id="id-454"><span  class="index">【455】</span><span class="correct">[C]</span>果汁、菜汁的营养强化剂一般是<span class="correctText">维生素c</span>。</p>
+<p id="id-455"><span  class="index">【456】</span><span class="correct">[A]</span>“ butter”是指<span class="correctText">奶油</span>。</p>
+<p id="id-456"><span  class="index">【457】</span><span class="correct">[A]</span>一旦发现燃气泄漏，应马上<span class="correctText">开窗通风</span>。</p>
+<p id="id-457"><span  class="index">【458】</span><span class="correct">[D]</span>花很少钱吃鱼翅席是不可能的，因为它不符合<span class="correctText">市场规律</span>原则。</p>
+<p id="id-458"><span  class="index">【459】</span><span class="correct">[A]</span>成年人植物油与动物油的摄入量以<span class="correctText">2:1</span>为宜，以保持饱和脂肪酸与不饱和脂肪酸之间的平衡。</p>
+<p id="id-459"><span  class="index">【460】</span><span class="correct">[C]</span>一克蛋白质在体内生理氧化可产生<span class="correctText">16.7</span>千焦耳的热量。</p>
+<p id="id-460"><span  class="index">【461】</span><span class="correct">[C]</span>动物油营养价值比植物油营养价值低的原因之一是<span class="correctText">饱和脂肪酸含量低高</span>。</p>
+<p id="id-461"><span  class="index">【462】</span><span class="correct">[C]</span>面筋质具有弹性、延伸性、韧性和<span class="correctText">比延性</span>。</p>
+<p id="id-462"><span  class="index">【463】</span><span class="correct">[B]</span>引起食物中毒的残余食物应在煮沸15 分钟后<span class="correctText">销毁</span>。</p>
+<p id="id-463"><span  class="index">【464】</span><span class="correct">[D]</span>跑油是指面坯中是<span class="correctText">油脂</span>从水面皮层溢出。</p>
+<p id="id-464"><span  class="index">【465】</span><span class="correct">[C]</span>鲜蛋的卫生问题主要是<span class="correctText">沙门氏菌</span>污染和微生物引起的腐败变质。</p>
+<p id="id-465"><span  class="index">【466】</span><span class="correct">[B]</span>化学农药污染环境，可通过<span class="correctText">食物链</span>进入人体。</p>
+<p id="id-466"><span  class="index">【467】</span><span class="correct">[C]</span>制作软质面包的面粉宜用<span class="correctText">高筋面粉</span>。</p>
+<p id="id-467"><span  class="index">【468】</span><span class="correct">[A]</span>调制全蛋黄油酱时，如果所用的鸡蛋不是很新鲜，应先把鸡蛋和糖加热至全部溶化，然后打发。其加热的作用，一是能够使糖完全溶化，二是能够<span class="correctText">去除鸡蛋中的部分腥味</span>。</p>
+<p id="id-468"><span  class="index">【469】</span><span class="correct">[C]</span>在 家庭中和工业中发生的触电事故主要是<span class="correctText">接触电压触电</span>。</p>
+<p id="id-469"><span  class="index">【470】</span><span class="correct">[D]</span>“Tunneroven”是指<span class="correctText">隧道式烤炉</span>。</p>
+<p id="id-470"><span  class="index">【471】</span><span class="correct">[C]</span>风味餐厅自助餐甜点装盘时，餐盘的<span class="correctText">式样</span>、风格、色彩等要和餐厅的风格一致。</p>
+<p id="id-471"><span  class="index">【472】</span><span class="correct">[C]</span>按<span class="correctText">厨房分工</span>分类，可将西点分为面包类、糕饼类、冷冻品类、巧克力类、精制小点类和工艺造型类。</p>
+<p id="id-472"><span  class="index">【473】</span><span class="correct">[C]</span>通常将考好的清蛋糕以<span class="correctText">蛋糕坯料充满烤盘、不溢出边缘、顶部不凸出</span>，这种装盘为合适。</p>
+<p id="id-473"><span  class="index">【474】</span><span class="correct">[C]</span>在厨房范围内，菜点成本是指构成产品的<span class="correctText">原料</span>耗费之和。</p>
+<p id="id-474"><span  class="index">【475】</span><span class="correct">[B]</span>在用力大或频繁摩擦的加工制作中宜使用<span class="correctText">不锈钢</span>炊具。</p>
+<p id="id-475"><span  class="index">【476】</span><span class="correct">[C]</span>亚硝酸盐的致死量是<span class="correctText">3</span>克。</p>
+<p id="id-476"><span  class="index">【477】</span><span class="correct">[C]</span>面团在搅拌中，由于空气的不断进入，使面团所含蛋白质内的硫氢键被氧化成分子间的双硫键，从而使面筋形成了<span class="correctText">三维空间结构</span>。</p>
+<p id="id-477"><span  class="index">【478】</span><span class="correct">[B]</span>原料加工前重量<span class="correctText">不等于</span>原料加工后重量，是净料单位成本计算的基本条件。</p>
+<p id="id-478"><span  class="index">【479】</span><span class="correct">[B]</span>下列选项对矿物质的生理功能叙述中不正确的是<span class="correctText">供给热能</span>。</p>
+<p id="id-479"><span  class="index">【480】</span><span class="correct">[C]</span>混酥面坯调制时，会使面粉颗粒间形成<span class="correctText">一层油脂膜</span>，使得面坯中的面粉蛋白质不能吸水形成面筋网络。</p>
+<p id="id-480"><span  class="index">【481】</span><span class="correct">[C]</span>打发是指蛋液或黄油经搅打<span class="correctText">体积增大</span>的方法。</p>
+<p id="id-481"><span  class="index">【482】</span><span class="correct">[B]</span>采用蒸汽法消毒餐具，消毒温度不低于<span class="correctText">90℃</span>，时间不少于15 分钟。</p>
+<p id="id-482"><span  class="index">【483】</span><span class="correct">[C]</span><span class="correctText">糖</span>可以调节面筋筋力，控制面团的性质。</p>
+<p id="id-483"><span  class="index">【484】</span><span class="correct">[C]</span>清酥类是在用水调面坯、油面坯互为表里，经反复<span class="correctText">擀叠</span>、冷冻形成新面坯 的基础上，经加工而成的一类层次清晰、松酥的点心。</p>
+<p id="id-484"><span  class="index">【485】</span><span class="correct">[A]</span>肉类蛋白质属于<span class="correctText">完全性</span>蛋白质。</p>
+<p id="id-485"><span  class="index">【486】</span><span class="correct">[D]</span>出材率是表示原材料<span class="correctText">利用</span>程度的指标。</p>
+<p id="id-486"><span  class="index">【487】</span><span class="correct">[B]</span>清洁消毒设备要安装在适宜操作，电源和<span class="correctText">供水剂排水</span>方便的地方。</p>
+<p id="id-487"><span  class="index">【488】</span><span class="correct">[C]</span>下面描述中，烘烤的清蛋糕已经成熟的是<span class="correctText">用牙签插入蛋糕中央，拔出后不粘面糊</span>。</p>
+<p id="id-488"><span  class="index">【489】</span><span class="correct">[B]</span>采用<span class="correctText">将甜点、坯料、装饰物按照宾主位置安排在同一盘内</span>的零点甜点装盘的方法，最大好处是整体感强，色彩鲜艳，使人一目了然。</p>
+<p id="id-489"><span  class="index">【490】</span><span class="correct">[D]</span>某产品售价45，成本18 元，此产品的成本毛利率是<span class="correctText">1.5</span>。</p>
+<p id="id-490"><span  class="index">【491】</span><span class="correct">[D]</span>下列中属于完全性蛋白质的是<span class="correctText">牛奶</span>。</p>
+<p id="id-491"><span  class="index">【492】</span><span class="correct">[C]</span>面包的最后成型和美化装饰是面包制作中关键的一步，也是决定面包品质好坏、<span class="correctText">口味优劣</span>、外形美观的重要步骤。</p>
+<p id="id-492"><span  class="index">【493】</span><span class="correct">[B]</span>引起食物中毒的被有毒有害物质污染的食品，不包括<span class="correctText">正常摄入数量</span>的食物。</p>
+<p id="id-493"><span  class="index">【494】</span><span class="correct">[A]</span>制作出来的杏仁塔要求塔底薄厚均匀，成品大小、颜色金黄一致，<span class="correctText">制品表面有光亮</span>，口感酥软，口味有淡淡杏仁香味。</p>
+<p id="id-494"><span  class="index">【495】</span><span class="correct">[A]</span>甜点装盘时，下列说法正确的是<span class="correctText">盘子应干净卫生、无破损</span>。</p>
+<p id="id-495"><span  class="index">【496】</span><span class="correct">[C]</span>鉴别蛋的新鲜程度一般有4 种方法，剂感观法、振荡法、比重法和<span class="correctText">光照法</span>。</p>
+<p id="id-496"><span  class="index">【497】</span><span class="correct">[C]</span>淀粉在口腔内受唾液淀粉酶的作用，有一小部分可分解为<span class="correctText">麦芽糖</span>。</p>
+<p id="id-497"><span  class="index">【498】</span><span class="correct">[B]</span>“ addsalt”的意思是<span class="correctText">加盐</span>。</p>
+<p id="id-498"><span  class="index">【499】</span><span class="correct">[C]</span><span class="correctText">果冻</span>是完全靠结力的凝固作用凝固而成的冷冻甜点。</p>
+<p id="id-499"><span  class="index">【500】</span><span class="correct">[D]</span>下列中操作错误的是<span class="correctText">使用压力锅时在限压阀上加一小碗扣住，以免限压阀冲脱</span>。</p>
+<p id="id-500"><span  class="index">【501】</span><span class="correct">[D]</span>制作混酥面坯时，应选用<span class="correctText">颗粒细小</span>的糖制品。</p>
+<p id="id-501"><span  class="index">【502】</span><span class="correct">[C]</span>总的来说，大型展览会甜点装盘方法，以突出<span class="correctText">造型和艺术感染力</span>为主，通过造型各异的甜点，展示出制作者的精巧技艺和艺术创造力。</p>
+<p id="id-502"><span  class="index">【503】</span><span class="correct">[A]</span>糖类的主要食物来源是<span class="correctText">谷类</span>和根茎类食品。</p>
+<p id="id-503"><span  class="index">【504】</span><span class="correct">[B]</span>由于清蛋糕面糊中所使用的<span class="correctText">鸡蛋成分</span>不同，因此请蛋糕有天使蛋糕和全蛋海绵蛋糕之分。</p>
+<p id="id-504"><span  class="index">【505】</span><span class="correct">[D]</span>在现在社会里下列行为中，<span class="correctText">缺斤少两</span>属于不道德行为。</p>
+<p id="id-505"><span  class="index">【506】</span><span class="correct">[A]</span>从根本上说加强社会主义职业道德是发展<span class="correctText">市场经济</span>的内在的客观要求。</p>
+<p id="id-506"><span  class="index">【507】</span><span class="correct">[D]</span>重要宴会甜点装盘方法，大都以<span class="correctText">银制</span>的餐具配以精美的甜点。</p>
+<p id="id-507"><span  class="index">【508】</span><span class="correct">[A]</span>生奶的抑菌作用在0℃时可保持48 小时，30℃时仅可保持<span class="correctText">3</span>小时。</p>
+<p id="id-508"><span  class="index">【509】</span><span class="correct">[C]</span>蛋白质不具备的生理功用是<span class="correctText">构成骨骼、牙齿</span>。</p>
+<p id="id-509"><span  class="index">【510】</span><span class="correct">[A]</span>面粉的“熟化”是指面粉在贮存期间，空气的氧气自动氧化面粉中的色素，并使面粉中的还原性氢团转化为<span class="correctText">双硫键</span>，从而使面粉色泽变白，面粉的性能得到改善。</p>
+<p id="id-510"><span  class="index">【511】</span><span class="correct">[D]</span>只有由多种食物相互搭配的膳食，营养素种类才齐全，数量才充足，才有利于<span class="correctText">营养素</span>的吸收和利用。</p>
+<p id="id-511"><span  class="index">【512】</span><span class="correct">[A]</span>通风设备在运转中要注意各种风口，不能有<span class="correctText">堵塞</span>等异常现象。</p>
+<p id="id-512"><span  class="index">【513】</span><span class="correct">[A]</span>建立健全菜点加工制作的<span class="correctText">原始记录</span>，是保证成本核算工作顺利进行的基本条件之一。</p>
+<p id="id-513"><span  class="index">【514】</span><span class="correct">[D]</span>《中华人民共和国食品卫生法》将我国长期以来实行的行之有效的食品卫生工作方针、政策，用<span class="correctText">法律</span>的形式确定下来。</p>
+<p id="id-514"><span  class="index">【515】</span><span class="correct">[B]</span>制作<span class="correctText">混酥面坯</span>时，如果选用熔点低的流体油脂，吸湿面粉的能力强，擀制时容易发粘，并影响制品的酥松性。</p>
+<p id="id-515"><span  class="index">【516】</span><span class="correct">[C]</span>在制作果冻时，下列说法不正确的 是<span class="correctText">水果丁洗干净后应马上倒入果冻液中</span>。</p>
+<p id="id-516"><span  class="index">【517】</span><span class="correct">[A]</span>“基准蛋白”一般是指<span class="correctText">蛋类</span>蛋白。</p>
+<p id="id-517"><span  class="index">【518】</span><span class="correct">[D]</span>加工罐头制品时，应注意加工时间不宜过长，以免破坏制品的内部结构，失去应有的弹性和<span class="correctText">光泽</span>。</p>
+<p id="id-518"><span  class="index">【519】</span><span class="correct">[A]</span><span class="correctText">将电饭锅进行可靠的接地保护</span>是符合设备安全操作规程的做法。</p>
+<p id="id-519"><span  class="index">【520】</span><span class="correct">[A]</span>保护接零是在<span class="correctText">1000V以下的中性接地的三相四线制系统</span>中，将电气设备的外壳与系统的零线相接。</p>
+<p id="id-520"><span  class="index">【521】</span><span class="correct">[A]</span>下列不属于软质面包的是<span class="correctText">奶头包</span>。</p>
+<p id="id-521"><span  class="index">【522】</span><span class="correct">[C]</span>下列选项中对钙的生理功用叙述错误的是<span class="correctText">延缓衰老</span>。</p>
+<p id="id-522"><span  class="index">【523】</span><span class="correct">[A]</span>混酥面坯制成后，应放到冷藏冰箱中冷却，其目的是：一是使面团内部水分能充分均匀吸收，二是促使黄油凝固，易于面坯成形，三是能使<span class="correctText">上劲的面团得到松弛</span>。</p>
+<p id="id-523"><span  class="index">【524】</span><span class="correct">[A]</span>结力是一种<span class="correctText">有机化合物</span>，呈无色或淡黄色的半透明颗粒、薄片或粉末状。</p>
+<p id="id-524"><span  class="index">【525】</span><span class="correct">[B]</span>厨房的<span class="correctText">冷藏设备</span>宜配置两套，一套在切配间，一套在冷菜间，要防止生熟食品的交叉感染。</p>
+<p id="id-525"><span  class="index">【526】</span><span class="correct">[A]</span>在榛子奶油蛋糕、杏仁蛋糕、核桃布丁等甜点制作中，一般多将所 用的干果<span class="correctText">磨成粉或切碎</span>后使用。</p>
+<p id="id-526"><span  class="index">【527】</span><span class="correct">[B]</span>通常，<span class="correctText">36V</span>以下的电压不会造成人身伤亡。</p>
+<p id="id-527"><span  class="index">【528】</span><span class="correct">[C]</span>我国营养专家将成人劳动分为五级，其中厨师工作属于<span class="correctText">重体力</span>劳动。</p>
+<p id="id-528"><span  class="index">【529】</span><span class="correct">[D]</span>对于较小的混酥面坯制品，由于烘烤胀发能力小，在摆放制品时要相应地紧凑一点，以免制品<span class="correctText">产生焦边现象，导致颜色不均</span>。</p>
+<p id="id-529"><span  class="index">【530】</span><span class="correct">[D]</span><span class="correctText">酱油</span>的卫生问题主要是微生物污染与生霉。</p>
+<p id="id-530"><span  class="index">【531】</span><span class="correct">[C]</span>在厨房范围内，成本核算包括记账、算账、<span class="correctText">分析</span>、比较的核算过程。</p>
+<p id="id-531"><span  class="index">【532】</span><span class="correct">[A]</span>下列营养价值较低的油脂是<span class="correctText">羊油</span>。</p>
+<p id="id-532"><span  class="index">【533】</span><span class="correct">[C]</span>巴菲是一种以鸡蛋和<span class="correctText">奶油</span>为主要原料的冷冻甜食。</p>
+<p id="id-533"><span  class="index">【534】</span><span class="correct">[D]</span>下列对水的生理功能叙述中不正确的是<span class="correctText">产生热能</span>。</p>
+<p id="id-534"><span  class="index">【535】</span><span class="correct">[C]</span>我们常用的肉类加工设备有绞肉机、肉类切片机和<span class="correctText">锯骨机</span>。</p>
+<p id="id-535"><span  class="index">【536】</span><span class="correct">[B]</span>副溶血性弧菌在盐浓度为<span class="correctText">0.03</span>时最宜生长繁殖。</p>
+<p id="id-536"><span  class="index">【537】</span><span class="correct">[D]</span>以下不属于天然甜味剂的是<span class="correctText">糖精</span>。</p>
+<p id="id-537"><span  class="index">【538】</span><span class="correct">[D]</span>对于那些体积较大、较厚的混酥类制品，需要<span class="correctText">低温、长时间</span>的烘烤。</p>
+<p id="id-538"><span  class="index">【539】</span><span class="correct">[D]</span>当选用<span class="correctText">陶瓷模具</span>作为清蛋糕的成型模具时，填充面糊时应适当多放一些。</p>
+<p id="id-539"><span  class="index">【540】</span><span class="correct">[D]</span>鲜黄花菜中容易引起食物中毒的有毒物质是<span class="correctText">二秋水仙碱</span>。</p>
+<p id="id-540"><span  class="index">【541】</span><span class="correct">[D]</span>从理论上讲，菜点的价格是有<span class="correctText">4部分</span>构成的。</p>
+<p id="id-541"><span  class="index">【542】</span><span class="correct">[A]</span>硬麦其面粉常常用于制作<span class="correctText">面包</span>。</p>
+<p id="id-542"><span  class="index">【543】</span><span class="correct">[C]</span>淀粉的糊化作用能提高面团的<span class="correctText">可塑性</span>。</p>
+<p id="id-543"><span  class="index">【544】</span><span class="correct">[A]</span>能够促进铁吸收的物质是<span class="correctText">抗坏血酸</span>。</p>
+<p id="id-544"><span  class="index">【545】</span><span class="correct">[D]</span>札干的制作<span class="correctText">大型点心模型</span>、展品的主要原料。</p>
+<p id="id-545"><span  class="index">【546】</span><span class="correct">[B]</span>将植物脂奶油从冰箱取出，倒入搅拌缸内准备打发时的奶油温度应在<span class="correctText">7～10℃</span>。</p>
+<p id="id-546"><span  class="index">【547】</span><span class="correct">[A]</span>灭鼠工作中最重要的一种方法是经常进行搬家式的大扫除，它属于<span class="correctText">生态学灭鼠</span>。</p>
+<p id="id-547"><span  class="index">【548】</span><span class="correct">[B]</span><span class="correctText">面粉的糖化</span>为面团中酵母的生长提供了养分，从而提高了面团发酵过程中产生二氧化碳气体的能力。</p>
+<p id="id-548"><span  class="index">【549】</span><span class="correct">[D]</span>餐饮成本是餐饮销售减去<span class="correctText">利润</span>的所有支出。</p>
+<p id="id-549"><span  class="index">【550】</span><span class="correct">[B]</span>姜中的挥发油所不含成分为<span class="correctText">姜酸</span>。</p>
+<p id="id-550"><span  class="index">【551】</span><span class="correct">[C]</span>当有人触电后，又不能立刻断开电源，则可使用<span class="correctText">干木棍</span>使带电体与人体脱离。</p>
+<p id="id-551"><span  class="index">【552】</span><span class="correct">[D]</span>重要宴会的甜点盘，一般不会选用<span class="correctText">大</span>的圆盘。</p>
+<p id="id-552"><span  class="index">【553】</span><span class="correct">[B]</span>我们使用金属模具装清蛋糕面糊时，在填充面糊时<span class="correctText">应适当多放一些</span>。</p>
+<p id="id-553"><span  class="index">【554】</span><span class="correct">[C]</span>面团搅拌的物理效应主要体现在两个方面，一方面是通过搅拌作用促使面粉水化完全形成面筋；又使面筋得到扩展，成为既有弹性又有延伸性的面团，另一方面是<span class="correctText">由于搅拌产生摩擦热，使面团的温度升高</span>。</p>
+<p id="id-554"><span  class="index">【555】</span><span class="correct">[A]</span>焙烤百分比的百分比总量<span class="correctText">不超过100%</span>。</p>
+<p id="id-555"><span  class="index">【556】</span><span class="correct">[C]</span>肌体内缺少维生素B12,会引起<span class="correctText">恶性贫血</span>。</p>
+<p id="id-556"><span  class="index">【557】</span><span class="correct">[C]</span>我国营养专家讲成人劳动分为五级，其中运动员属于<span class="correctText">重体力</span>劳动。</p>
+<p id="id-557"><span  class="index">【558】</span><span class="correct">[B]</span>影响混酥制品成熟的因素主要有两个方面：一是<span class="correctText">烘烤湿度</span>，二是烘烤时间。</p>
+<p id="id-558"><span  class="index">【559】</span><span class="correct">[C]</span>在现在社会里下列行为中，<span class="correctText">大企业挤跨小企业</span>不属于不道德行为。</p>
+<p id="id-559"><span  class="index">【560】</span><span class="correct">[C]</span>制作软质面包的面粉在使用前要过罗，下列不属于面粉过罗的目的的是<span class="correctText">降低面粉的温度</span>。</p>
+<p id="id-560"><span  class="index">【561】</span><span class="correct">[C]</span>采用蛋清、蛋黄分开搅拌法调制蛋糕面糊时，将蛋清加入少量的糖搅打起泡沫后，再加入总糖量<span class="correctText">1/2</span>的糖继续抽打均匀。</p>
+<p id="id-561"><span  class="index">【562】</span><span class="correct">[D]</span>在选用果冻的模具时，大多应选用<span class="correctText">小的、简单</span>的模具。</p>
+<p id="id-562"><span  class="index">【563】</span><span class="correct">[C]</span>打发后的动物奶油的稳定性保护在<span class="correctText">4小时</span>左右，所以奶油打发后，应尽早使用。</p>
+<p id="id-563"><span  class="index">【564】</span><span class="correct">[B]</span>奶油加工方法有多种，常见的有：打发奶油、<span class="correctText">熬制奶油</span>、直接使用和加热加油等。</p>
+<p id="id-564"><span  class="index">【565】</span><span class="correct">[B]</span>大肠菌群是反应食品被<span class="correctText">粪便</span>污染的指标。</p>
+<p id="id-565"><span  class="index">【566】</span><span class="correct">[A]</span>制作混坯面坯时，如果面粉筋度太高，则在搅拌面团和整形过程中<span class="correctText">易揉捏出筋</span>，使之在烘烤中面皮发生收缩现象，产品坚硬，失去应有的松酥的品质。</p>
+<p id="id-566"><span  class="index">【567】</span><span class="correct">[D]</span>自然界没有一种食物含有人类需要的全部<span class="correctText">营养物质</span>。</p>
+<p id="id-567"><span  class="index">【568】</span><span class="correct">[A]</span>膳食中缺钙，可患<span class="correctText">佝偻病</span>。</p>
+<p id="id-568"><span  class="index">【569】</span><span class="correct">[C]</span>鉴别蛋的新鲜程度一般有4 种方法，即感官法、震荡法、比重法和<span class="correctText">光照法</span>。</p>
+<p id="id-569"><span  class="index">【570】</span><span class="correct">[B]</span>过量食用动物脂肪会促进<span class="correctText">动脉硬化</span>。</p>
+<p id="id-570"><span  class="index">【571】</span><span class="correct">[C]</span>为防止毒物的吸收和保护胃肠黏膜，食物中毒后，应尽快使用<span class="correctText">拮抗剂</span>。</p>
+<p id="id-571"><span  class="index">【572】</span><span class="correct">[A]</span>混酥面坯制成后，应放到冷藏冰箱中冷却，其目的是:一是使面团内部水分能充分均匀吸收，二是促使黄油凝固，易于面坯成形，三是能使<span class="correctText">上劲的面团得到松弛</span>。</p>
+<p id="id-572"><span  class="index">【573】</span><span class="correct">[A]</span>指出<span class="correctText">降低</span>成本的途径，是成本核算的任务之一。</p>
+<p id="id-573"><span  class="index">【574】</span><span class="correct">[D]</span>下列对维生素的共同特点叙述中正确的是<span class="correctText">肌体对维生素是需要量每日以毫克或微克计算</span>。</p>
+<p id="id-574"><span  class="index">【575】</span><span class="correct">[A]</span>食品强化剂是指为增强营养成分而加入食品中的天然或人工合成属于天然营养素范围的<span class="correctText">食品添加剂</span>。</p>
+<p id="id-575"><span  class="index">【576】</span><span class="correct">[C]</span>为防止油脂酸败现象的发生，油脂的保管应在<span class="correctText">低温</span>、避光和通风处。</p>
+<p id="id-576"><span  class="index">【577】</span><span class="correct">[B]</span>提高给人体的热量如果长期<span class="correctText">大于</span>人体对热量的实际消耗，过剩的热量将会在人体内转化成脂肪，使人体态臃肿，动作缓慢。</p>
+<p id="id-577"><span  class="index">【578】</span><span class="correct">[B]</span>由于人类活动具有<span class="correctText">社会性</span>，根据其活动而产生三种道德。</p>
+<p id="id-578"><span  class="index">【579】</span><span class="correct">[B]</span>“ mousse”是指<span class="correctText">木司</span>。</p>
+<p id="id-579"><span  class="index">【580】</span><span class="correct">[C]</span>制作混酥面坯时，如果选用熔点低的流体油脂，<span class="correctText">吸湿面粉</span>的能力强，擀制时容易发粘，并影响制品的酥松性。</p>
+<p id="id-580"><span  class="index">【581】</span><span class="correct">[A]</span>清酥类是在水调面坯、油面坯用互为表里，经反复擀叠、冷冻形成新面坯的基础上，经加工而成的一类<span class="correctText">层次清晰、松酥</span>的点心。</p>
+<p id="id-581"><span  class="index">【582】</span><span class="correct">[A]</span>如果使用结力片调制果冻液，需要先将结力片<span class="correctText">用凉水泡软</span>，然后再调制。</p>
+<p id="id-582"><span  class="index">【583】</span><span class="correct">[B]</span>我们将不带边的烤盘，用英文表示为<span class="correctText">bakingsheet</span>。</p>
+<p id="id-583"><span  class="index">【584】</span><span class="correct">[D]</span>鸡蛋有乳化性、<span class="correctText">起泡性</span>、和黏结作用等工艺性能。</p>
+<p id="id-584"><span  class="index">【585】</span><span class="correct">[C]</span>鲜蛋的卫生问题主要是沙门氏菌污染和<span class="correctText">微生物</span>引起的腐败变质。</p>
+<p id="id-585"><span  class="index">【586】</span><span class="correct">[B]</span>风登糖是以<span class="correctText">砂糖</span>为主要原料，用适量水加5%～10%的葡萄糖熬制，并经反复搓叠而成。</p>
+<p id="id-586"><span  class="index">【587】</span><span class="correct">[D]</span>盛装醋的容器最好选用<span class="correctText">玻璃</span>容器。</p>
+<p id="id-587"><span  class="index">【588】</span><span class="correct">[D]</span>刀具应放置在一定的地方，下列中放置刀具正确的是<span class="correctText">放在案板下</span>。</p>
+<p id="id-588"><span  class="index">【589】</span><span class="correct">[B]</span>“Bakingpowder”是指<span class="correctText">发粉</span>。</p>
+<p id="id-589"><span  class="index">【590】</span><span class="correct">[D]</span>为了保证厨房安全生产，必须重点考虑安全技术和<span class="correctText">卫生技术</span>两各基本方面的要求。</p>
+<p id="id-590"><span  class="index">【591】</span><span class="correct">[D]</span>如果身上衣物着火，可以<span class="correctText">用湿布扑打</span>将火扑灭。</p>
+<p id="id-591"><span  class="index">【592】</span><span class="correct">[A]</span>全蛋搅拌法是将糖与全蛋液在搅拌机内抽打至蛋液成为比原体积膨胀3 倍左右的<span class="correctText">乳白色稠糊状</span>后，加入过筛面粉调拌均匀的方法。</p>
+<p id="id-592"><span  class="index">【593】</span><span class="correct">[C]</span>四季豆中容易引起食物中毒的有毒物质是<span class="correctText">皂素</span>。</p>
+<p id="id-593"><span  class="index">【594】</span><span class="correct">[C]</span>罐头食品一经打开，必须倒换至其他<span class="correctText">不锈钢</span>容器内存放。</p>
+<p id="id-594"><span  class="index">【595】</span><span class="correct">[C]</span>调混酥面坯的基本用料有<span class="correctText">面粉、黄油、糖、鸡蛋</span>等。</p>
+<p id="id-595"><span  class="index">【596】</span><span class="correct">[A]</span><span class="correctText">含糖</span>量高的清蛋糕，其烘烤温度要比其含量低的蛋糕温度低。</p>
+<p id="id-596"><span  class="index">【597】</span><span class="correct">[A]</span>燃烧是可燃物质与氧或氧化剂<span class="correctText">化合</span>所产生的发光放热的化学反应。</p>
+<p id="id-597"><span  class="index">【598】</span><span class="correct">[B]</span>小型酒会甜点大都以<span class="correctText">量少而精</span>著称。</p>
+<p id="id-598"><span  class="index">【599】</span><span class="correct">[A]</span>为保证食用油脂的卫生质量，我国规定油脂中水分不得超过<span class="correctText">0.002</span>。</p>
+<p id="id-599"><span  class="index">【600】</span><span class="correct">[A]</span>使用面点加工设备前应对机器的电气和<span class="correctText">机械部分</span>进行检查。</p>
+<p id="id-600"><span  class="index">【601】</span><span class="correct">[C]</span>下列油脂中，熔点最高的油脂是<span class="correctText">人造黄油</span>。</p>
+<p id="id-601"><span  class="index">【602】</span><span class="correct">[D]</span>使用移动电器设备必须按照规定选择与设备容量匹配的<span class="correctText">插座</span>。</p>
+<p id="id-602"><span  class="index">【603】</span><span class="correct">[B]</span>下列说法中错误的是<span class="correctText">为了将碗洗得更干净，将洗涤剂的投放量加大</span></p>
+<p id="id-603"><span  class="index">【604】</span><span class="correct">[B]</span>“molder”的中文意思是指<span class="correctText">模具</span>。</p>
+<p id="id-604"><span  class="index">【605】</span><span class="correct">[D]</span>下列中不属于食品存放“四隔离”制度的选项是<span class="correctText">动物与植物原料隔离</span>。</p>
+<p id="id-605"><span  class="index">【606】</span><span class="correct">[D]</span>果冻液中<span class="correctText">梨汁</span>的存在不会影响结力的凝胶力，不会使果冻的成品弹性降低。</p>
+<p id="id-606"><span  class="index">【607】</span><span class="correct">[D]</span>新生儿体内含水量约占其体重的<span class="correctText">0.8</span>左右。</p>
+<p id="id-607"><span  class="index">【608】</span><span class="correct">[D]</span>调制全蛋黄油酱时，如果所用的鸡蛋不是很新鲜，应先把鸡蛋和糖加热至全部溶化，然后再打发。其加热的作用，一是能够使糖完全溶解，二是能够<span class="correctText">使蛋液浓度增加</span>。</p>
+<p id="id-608"><span  class="index">【609】</span><span class="correct">[B]</span>制作夹馅的混酥类点心采用的成型方法是<span class="correctText">模具双层皮成型</span>。</p>
+<p id="id-609"><span  class="index">【610】</span><span class="correct">[A]</span>空调设备是指可以对空气进行温度、<span class="correctText">湿度</span>洁净度和气流组织等处理的专门设备。</p>
+<p id="id-610"><span  class="index">【611】</span><span class="correct">[A]</span>“足价蛋白”一般是指<span class="correctText">蛋类</span>蛋白。</p>
+<p id="id-611"><span  class="index">【612】</span><span class="correct">[B]</span>脂肪的日供给量一般应为<span class="correctText">50</span>克。</p>
+<p id="id-612"><span  class="index">【613】</span><span class="correct">[C]</span>食品容器不能用于盛放<span class="correctText">即将换洗的衣物</span>。</p>
+<p id="id-613"><span  class="index">【614】</span><span class="correct">[B]</span>食品造型创作的主题一方面来自于自身的特点，另一方面来自于创作者利用<span class="correctText">自身的情感</span>进行造型创作的艺术加工。</p>
+<p id="id-614"><span  class="index">【615】</span><span class="correct">[A]</span>生奶 的抑菌作用在0℃时可保持48 小时，<span class="correctText">30℃</span>可保持3 小时。</p>
+<p id="id-615"><span  class="index">【616】</span><span class="correct">[C]</span>保护接零是将电气设备的外壳与<span class="correctText">系统的零线</span>相接。</p>
+<p id="id-616"><span  class="index">【617】</span><span class="correct">[C]</span>价格是原料成本与<span class="correctText">毛利额</span>的和。</p>
+<p id="id-617"><span  class="index">【618】</span><span class="correct">[D]</span>下列选项中有利于提高蛋白质营养价值的是<span class="correctText">牛肉白菜饺子</span>。</p>
+<p id="id-618"><span  class="index">【619】</span><span class="correct">[A]</span>牛奶的英文意思是<span class="correctText">Milk</span>。</p>
+<p id="id-619"><span  class="index">【620】</span><span class="correct">[C]</span>我国的标准粉属于<span class="correctText">中筋面粉</span>。</p>
+<p id="id-620"><span  class="index">【621】</span><span class="correct">[C]</span><span class="correctText">蛋糕类</span>是以鸡蛋、糖、油脂、面粉等为主要原料，配以辅料，经一系列加工而制成的松软点心。</p>
+<p id="id-621"><span  class="index">【622】</span><span class="correct">[B]</span>甜点装盘时，下列说法正确的是<span class="correctText">除饰品外，所用主料、坯料都不得露在盘子的外沿</span>。</p>
+<p id="id-622"><span  class="index">【623】</span><span class="correct">[B]</span>下面属于公务员的职业道德规范的是<span class="correctText">公正廉洁</span>。</p>
+<p id="id-623"><span  class="index">【624】</span><span class="correct">[D]</span>下列中不属于厨房安全生产应有的规章制度的是<span class="correctText">安全加工保护制</span>。</p>
+<p id="id-624"><span  class="index">【625】</span><span class="correct">[C]</span>“almondtart” 是指<span class="correctText">杏仁塔</span>。</p>
+<p id="id-625"><span  class="index">【626】</span><span class="correct">[C]</span>烘烤混酥制品时，一般情况下，烤箱的温度低，所需的烘烤时间<span class="correctText">相对长一些</span>。</p>
+<p id="id-626"><span  class="index">【627】</span><span class="correct">[A]</span>搅拌黄油酱的黄油应使用<span class="correctText">含水率低</span>的优质黄油。</p>
+<p id="id-627"><span  class="index">【628】</span><span class="correct">[B]</span>不粘锅可在<span class="correctText">260℃</span>一下长期使用。</p>
+<p id="id-628"><span  class="index">【629】</span><span class="correct">[C]</span>下列现象属于面团搅拌过度的是<span class="correctText">触摸面团，面团过分湿润、粘手</span>。</p>
+<p id="id-629"><span  class="index">【630】</span><span class="correct">[C]</span>果冻液倒入模具时，应避免起沫，否则<span class="correctText">冷却后影响成品的美观</span>。</p>
+<p id="id-630"><span  class="index">【631】</span><span class="correct">[B]</span>中国居民膳食宝塔的最高层是：<span class="correctText">油脂类</span>。</p>
+<p id="id-631"><span  class="index">【632】</span><span class="correct">[正确]</span><span class="correctText"></span>清蛋糕又称天使蛋糕，是蛋糕类最常见的品种之一。</p>
+<p id="id-632"><span  class="index">【633】</span><span class="correct">[正确]</span><span class="correctText"></span>面点间员工要求，男不留胡须，女不染指甲。</p>
+<p id="id-633"><span  class="index">【634】</span><span class="correct">[正确]</span><span class="correctText"></span>制作混酥面坯时，应选用颗粒细小的糖制品，如细砂糖、面白糖或糖粉。</p>
+<p id="id-634"><span  class="index">【635】</span><span class="correct">[正确]</span><span class="correctText"></span>对于外形大小相同的蛋，重者为新鲜蛋，轻者为陈蛋。</p>
+<p id="id-635"><span  class="index">【636】</span><span class="correct">[正确]</span><span class="correctText"></span>一般面粉按面筋含量的多少，将面粉分为高筋面粉、中筋面粉、低筋面粉三种基本类型。</p>
+<p id="id-636"><span  class="index">【637】</span><span class="correct">[正确]</span><span class="correctText"></span>跑油是指面坯中的油脂从水面皮层溢出的现象。</p>
+<p id="id-637"><span  class="index">【638】</span><span class="correct">[正确]</span><span class="correctText"></span>一分质量一分价钱，这是商业工作者的职业道德。</p>
+<p id="id-638"><span  class="index">【639】</span><span class="correct">[正确]</span><span class="correctText"></span>溶化黄油的最佳方法是双煮法和微波溶化法，其他方法易使黄油变色。</p>
+<p id="id-639"><span  class="index">【640】</span><span class="correct">[正确]</span><span class="correctText"></span>软质面包成品内部应该是组织松软，蜂窝均匀。</p>
+<p id="id-640"><span  class="index">【641】</span><span class="correct">[正确]</span><span class="correctText"></span>在糖类、脂肪、蛋白质的消化中，胃液起着重要作用。</p>
+<p id="id-641"><span  class="index">【642】</span><span class="correct">[正确]</span><span class="correctText"></span>面筋质具有弹性、延伸性、韧性和比延性，这些特性对改善面团物理性能具有重要的作用。</p>
+<p id="id-642"><span  class="index">【643】</span><span class="correct">[正确]</span><span class="correctText"></span>按奶油的不同来源，将奶油常分为天然奶油和人造奶油。</p>
+<p id="id-643"><span  class="index">【644】</span><span class="correct">[正确]</span><span class="correctText"></span>打发奶油是西式面点奶油加工最首要的一种加工方法。</p>
+<p id="id-644"><span  class="index">【645】</span><span class="correct">[正确]</span><span class="correctText"></span>个人卫生“四勤”是指：勤洗手、勤剪指甲、勤洗澡和理发。</p>
+<p id="id-645"><span  class="index">【646】</span><span class="correct">[正确]</span><span class="correctText"></span>一般说来，发酵面团的产气能力取决于面粉的糖化力。</p>
+<p id="id-646"><span  class="index">【647】</span><span class="correct">[正确]</span><span class="correctText"></span>利用油面调制法制作混酥面坯要求，面坯中的油脂要完全渗透到面粉之中。</p>
+<p id="id-647"><span  class="index">【648】</span><span class="correct">[错误]</span><span class="correctText"></span>面包面坯的成形不仅能够使制品拥有美的外观，而且还可借助不同的面包样式划分面包的种类及口味。</p>
+<p id="id-648"><span  class="index">【649】</span><span class="correct">[错误]</span><span class="correctText"></span>已知a毛料进价35 元/千克，熟品率70%。某产品用a 净料300 克，b料 200 克，单位成本12 元/千克，此产品的总成本是9.75 元。</p>
+<p id="id-649"><span  class="index">【650】</span><span class="correct">[正确]</span><span class="correctText"></span>擀制面团时要用力适当，掌握平衡。</p>
+<p id="id-650"><span  class="index">【651】</span><span class="correct">[错误]</span><span class="correctText"></span>蛋糕糊的填充量是由模具的大小和蛋糕糊的胀发度决定的，一般以填充模具的六成满为宜。</p>
+<p id="id-651"><span  class="index">【652】</span><span class="correct">[错误]</span><span class="correctText"></span>“大鱼吃小鱼，小鱼吃虾米”是不道德的。</p>
+<p id="id-652"><span  class="index">【653】</span><span class="correct">[正确]</span><span class="correctText"></span>各行各业都必须有体现行业内在要求的职业道德规范。</p>
+<p id="id-653"><span  class="index">【654】</span><span class="correct">[错误]</span><span class="correctText"></span>讲究质量要求必须是绝对高的质量。</p>
+<p id="id-654"><span  class="index">【655】</span><span class="correct">[正确]</span><span class="correctText"></span>土壤、空气、岩石、水域中均可含有放射性元素，从而使食品受到放射性污染。</p>
+<p id="id-655"><span  class="index">【656】</span><span class="correct">[错误]</span><span class="correctText"></span>“Molder”的中文意思是成型机。</p>
+<p id="id-656"><span  class="index">【657】</span><span class="correct">[错误]</span><span class="correctText"></span>面点间员工要求佩带名牌，且佩带配置要明显。</p>
+<p id="id-657"><span  class="index">【658】</span><span class="correct">[正确]</span><span class="correctText"></span>面筋质是一种黏结而又有弹性的网络组织，是面坯的支架。</p>
+<p id="id-658"><span  class="index">【659】</span><span class="correct">[正确]</span><span class="correctText"></span>加工罐头制品时，要注意加工时间不宜过长，即要尽快加工。</p>
+<p id="id-659"><span  class="index">【660】</span><span class="correct">[错误]</span><span class="correctText"></span>打发奶油是西式面点奶油加工最首要的一种加工方法。</p>
+<p id="id-660"><span  class="index">【661】</span><span class="correct">[正确]</span><span class="correctText"></span>黄油挤制法挤出的黄油是为西餐面包而备的黄油制品。</p>
+<p id="id-661"><span  class="index">【662】</span><span class="correct">[错误]</span><span class="correctText"></span>制作混酥面坯时，应选用颗粒较粗的糖制品，以免糖粒过细，过早溶化，影响产品的品质。</p>
+<p id="id-662"><span  class="index">【663】</span><span class="correct">[正确]</span><span class="correctText"></span>使制品体积膨大的方法有多种，如化学起泡、生物起泡、机械起泡。</p>
+<p id="id-663"><span  class="index">【664】</span><span class="correct">[正确]</span><span class="correctText"></span>果冻液的调制方法，根据所用凝固原料的不同，常见的有使用果冻粉调制和使用结力调制两种。</p>
+<p id="id-664"><span  class="index">【665】</span><span class="correct">[正确]</span><span class="correctText"></span>在面团分割的过程中，不论是手工分割还是机器分割，都要动作迅速。</p>
+<p id="id-665"><span  class="index">【666】</span><span class="correct">[正确]</span><span class="correctText"></span>一般情况下，烘烤有馅料的双皮排时，烘烤时间要相对长一些。</p>
+<p id="id-666"><span  class="index">【667】</span><span class="correct">[正确]</span><span class="correctText"></span>检查蛋糕是否成熟，可用牙签在蛋糕中央插入，拔出后不粘附面糊，则表明已经成熟。</p>
+<p id="id-667"><span  class="index">【668】</span><span class="correct">[正确]</span><span class="correctText"></span>餐厅零点甜点的装盘方法，可根据餐厅风格、甜点的性质来确定。</p>
+<p id="id-668"><span  class="index">【669】</span><span class="correct">[错误]</span><span class="correctText"></span>在构图中要以表现艺术创造美为主，这也是绝大多数食用者所向往的。</p>
+<p id="id-669"><span  class="index">【670】</span><span class="correct">[正确]</span><span class="correctText"></span>淀粉供给酵母发酵所需要的能量，对酵母的生长具有重要作用。</p>
+<p id="id-670"><span  class="index">【671】</span><span class="correct">[正确]</span><span class="correctText"></span>面粉的“熟化”是指面粉在贮存期间，空气的氧气自动氧化面粉中的色素，并使面粉中的还原性氢团转化为双硫键，从而使面粉色泽变白，面粉的物理性能得到改善。</p>
+<p id="id-671"><span  class="index">【672】</span><span class="correct">[正确]</span><span class="correctText"></span>核桃的英文名称是“nut”。</p>
+<p id="id-672"><span  class="index">【673】</span><span class="correct">[正确]</span><span class="correctText"></span>吐司的英文名称是“toastbread”。</p>
+<p id="id-673"><span  class="index">【674】</span><span class="correct">[正确]</span><span class="correctText"></span>厨房的冷藏设备最好配备两套，以防止食品的生熟交叉污染。</p>
+<p id="id-674"><span  class="index">【675】</span><span class="correct">[正确]</span><span class="correctText"></span>某料成本系料1.8，若购进单价为18 元/千克的同质量的原料8 千克，此料的单位成本是14.4 元/千克。</p>
+<p id="id-675"><span  class="index">【676】</span><span class="correct">[正确]</span><span class="correctText"></span>餐厅零点甜点的装盘宗旨是与餐厅的风味相适宜，尽量做到少而精。</p>
+<p id="id-676"><span  class="index">【677】</span><span class="correct">[正确]</span><span class="correctText"></span>淀粉的糊化作用能提高面团的可塑性。</p>
+<p id="id-677"><span  class="index">【678】</span><span class="correct">[正确]</span><span class="correctText"></span>混酥制品的成熟多采用烘烤成熟的方法。</p>
+<p id="id-678"><span  class="index">【679】</span><span class="correct">[正确]</span><span class="correctText"></span>引起闪燃的最低温度叫闪点。</p>
+<p id="id-679"><span  class="index">【680】</span><span class="correct">[错误]</span><span class="correctText"></span>原料加工前的进货价值，必须等于与原料加工后的成本。</p>
+<p id="id-680"><span  class="index">【681】</span><span class="correct">[正确]</span><span class="correctText"></span>焙烤百分比是以点心配方中面粉重量为100%，其他各种原料的百分比是相对于面粉的多少而言。</p>
+<p id="id-681"><span  class="index">【682】</span><span class="correct">[正确]</span><span class="correctText"></span>如果揉面揉得不适当，不仅外观不完整，还可能破坏面筋网络的形成。</p>
+<p id="id-682"><span  class="index">【683】</span><span class="correct">[正确]</span><span class="correctText"></span>油脂具有疏水性和游离性。</p>
+<p id="id-683"><span  class="index">【684】</span><span class="correct">[正确]</span><span class="correctText"></span>混酥类点心的面坯有甜味和咸味之分，是西点中常用的基础面坯。</p>
+<p id="id-684"><span  class="index">【685】</span><span class="correct">[正确]</span><span class="correctText"></span>擦拭地面应采用“倒退法”，以免踩脏刚刚擦拭的地面。</p>
+<p id="id-685"><span  class="index">【686】</span><span class="correct">[正确]</span><span class="correctText"></span>将含脂率高于60%的牛乳脂肪，称为黄油。</p>
+<p id="id-686"><span  class="index">【687】</span><span class="correct">[正确]</span><span class="correctText"></span>清蛋糕用途极广，常用作西式各类奶油甜点、黄油甜点及生日蛋糕的坯料。</p>
+<p id="id-687"><span  class="index">【688】</span><span class="correct">[正确]</span><span class="correctText"></span>面团在搅拌时，由于空气的不断进入，使面团所含蛋白质内的硫氢键被氧化成分子间的双硫键，从而使面筋形成了三维空间结构。</p>
+<p id="id-688"><span  class="index">【689】</span><span class="correct">[错误]</span><span class="correctText"></span>混酥类点心的成型方法是将其擀制成薄厚一致的片，再切割。</p>
+<p id="id-689"><span  class="index">【690】</span><span class="correct">[正确]</span><span class="correctText"></span>果冻若在零度以下的低温冷却，会失去果冻原有的品质</p>
+<p id="id-690"><span  class="index">【691】</span><span class="correct">[错误]</span><span class="correctText"></span>我们加工水果时，应选用新鲜的水果，且加工时应适当多加工一些，以免加工的鲜果制品不够。</p>
+<p id="id-691"><span  class="index">【692】</span><span class="correct">[正确]</span><span class="correctText"></span>奶粉的英文名称是“milkpowder”。</p>
+<p id="id-692"><span  class="index">【693】</span><span class="correct">[正确]</span><span class="correctText"></span>竞争实际上也是劳动生产率的较量。</p>
+<p id="id-693"><span  class="index">【694】</span><span class="correct">[正确]</span><span class="correctText"></span>对于体积较大、较厚的混酥类制品需要低温、长时间的烘烤才能很好成熟。</p>
+<p id="id-694"><span  class="index">【695】</span><span class="correct">[错误]</span><span class="correctText"></span>黄油挤制法挤出的黄油是为西餐面包而备 的黄油制品。</p>
+<p id="id-695"><span  class="index">【696】</span><span class="correct">[正确]</span><span class="correctText"></span>在调制蛋黄黄油酱时，将糖水加入到蛋黄液中时要小心尽量将其倒在正在转动的抽子上。</p>
+<p id="id-696"><span  class="index">【697】</span><span class="correct">[正确]</span><span class="correctText"></span>构图是食品艺术创作中的开始，是创作的一部分。</p>
+<p id="id-697"><span  class="index">【698】</span><span class="correct">[正确]</span><span class="correctText"></span>因为果冻内的凝胶力不足以保持大型模具制作出的成品的支撑力，所以果冻的成型一般不用大型的模具。</p>
+<p id="id-698"><span  class="index">【699】</span><span class="correct">[正确]</span><span class="correctText"></span>水可以促进淀粉酶对淀粉分解，帮助酵母生长繁殖。</p>
+<p id="id-699"><span  class="index">【700】</span><span class="correct">[正确]</span><span class="correctText"></span>使制品体积膨大的方法有多种，如化学气泡、生物气泡、机械气泡。</p>
+<p id="id-700"><span  class="index">【701】</span><span class="correct">[正确]</span><span class="correctText"></span>烘烤法式克司得排时，如果发现底部已上色，而面部未上色，则应关掉底火，并在制品烤盘下再加垫一个烤盘，继续烤制。</p>
+<p id="id-701"><span  class="index">【702】</span><span class="correct">[正确]</span><span class="correctText"></span>尽职尽责的“尽”就是要求用最大的努力克服困难去完成职责。</p>
+<p id="id-702"><span  class="index">【703】</span><span class="correct">[错误]</span><span class="correctText"></span>马司板是英文madiban 的译音，又称杏仁膏、杏仁面、杏仁泥。</p>
+<p id="id-703"><span  class="index">【704】</span><span class="correct">[错误]</span><span class="correctText"></span>为减少浪费，烹调用的残油可回倒在新油中，今后再用。</p>
+<p id="id-704"><span  class="index">【705】</span><span class="correct">[正确]</span><span class="correctText"></span>蛋糕类是以鸡蛋、糖、油脂、面粉等为主要原料，配以水果、奶酪、巧克力、果仁等辅料，经一系列加工而制成的松软点心。</p>
+<p id="id-705"><span  class="index">【706】</span><span class="correct">[错误]</span><span class="correctText"></span>打发后的动物脂奶油应立即放人恒温冰箱，不能在室温下存放。</p>
+<p id="id-706"><span  class="index">【707】</span><span class="correct">[错误]</span><span class="correctText"></span>竞争是不符合人类根本利益的行为，因而是不道德行为。</p>
+<p id="id-707"><span  class="index">【708】</span><span class="correct">[正确]</span><span class="correctText"></span>蛋糕坯的成型一般借助模具，所以蛋糕坯的整体形状由蛋糕坯模具的形状决定。</p>
+<p id="id-708"><span  class="index">【709】</span><span class="correct">[正确]</span><span class="correctText"></span>果冻这类冷冻甜点是靠结力的凝胶作用和鸡蛋的乳化作用而形成的。</p>
+<p id="id-709"><span  class="index">【710】</span><span class="correct">[正确]</span><span class="correctText"></span>机器分割面团的速度较快，重量也较准确，但对面团内面筋有一定的损伤。</p>
+<p id="id-710"><span  class="index">【711】</span><span class="correct">[错误]</span><span class="correctText"></span>各类水果罐头的切割成型一般以用餐者食用方便而又不破坏罐装制品的自身口味和营养为原则。</p>
+<p id="id-711"><span  class="index">【712】</span><span class="correct">[正确]</span><span class="correctText"></span>某产品成本30 元，销售毛利率60%，其成本率应为40%。</p>
+<p id="id-712"><span  class="index">【713】</span><span class="correct">[错误]</span><span class="correctText"></span>成本毛利率又称成本率。</p>
+<p id="id-713"><span  class="index">【714】</span><span class="correct">[正确]</span><span class="correctText"></span>软质面包成品内部应该组织强细密、有弹性。</p>
+<p id="id-714"><span  class="index">【715】</span><span class="correct">[正确]</span><span class="correctText"></span>塔借助于模具来成型，且其形状因模具不同而不同。</p>
+<p id="id-715"><span  class="index">【716】</span><span class="correct">[正确]</span><span class="correctText"></span>大型展览会甜点装盘方法，以突出风格和独特为主，通过造型各异的甜点，展示出制作者的精巧技艺和艺术创造力。</p>
+<p id="id-716"><span  class="index">【717】</span><span class="correct">[错误]</span><span class="correctText"></span>尽职尽责的“尽”就是要求用最大的努力克服困难去完成职责。</p>
+<p id="id-717"><span  class="index">【718】</span><span class="correct">[正确]</span><span class="correctText"></span>制作清蛋糕面糊时，使用的鸡蛋要新鲜，因为新鲜鸡蛋保持气体的性能较稳定，从而提高清蛋糕的膨松性。</p>
+<p id="id-718"><span  class="index">【719】</span><span class="correct">[正确]</span><span class="correctText"></span>陶瓷器具盛装酸性食品时，会析出铅、镉等成分，影响人类的健康。</p>
+<p id="id-719"><span  class="index">【720】</span><span class="correct">[正确]</span><span class="correctText"></span>面包的最后成型及美化装饰，决定了成品的色泽。</p>
+<p id="id-720"><span  class="index">【721】</span><span class="correct">[错误]</span><span class="correctText"></span>一分质量一分价钱，这是商业工作者的职业道德。</p>
+<p id="id-721"><span  class="index">【722】</span><span class="correct">[错误]</span><span class="correctText"></span>保证产品质量是成本核算的基本条件之一。</p>
+<p id="id-722"><span  class="index">【723】</span><span class="correct">[错误]</span><span class="correctText"></span>面包根据其本身的质感划分为脆皮面包和松质面包两大类。</p>
+<p id="id-723"><span  class="index">【724】</span><span class="correct">[错误]</span><span class="correctText"></span>混酥面坯在擀制时，应尽量多擀制几次，使面坯擀制均匀、平整。</p>
+<p id="id-724"><span  class="index">【725】</span><span class="correct">[错误]</span><span class="correctText"></span>食物中毒是指食用各种被有毒有害物质污染的食品后发生的慢性疾病的总称。</p>
+<p id="id-725"><span  class="index">【726】</span><span class="correct">[正确]</span><span class="correctText"></span>在销售价格和耗料成本一致的条件下，成本毛利率与销售毛利率存在换算关系。</p>
+<p id="id-726"><span  class="index">【727】</span><span class="correct">[正确]</span><span class="correctText"></span>成本核算的任务之一是揭示成本提高或减低的原因。</p>
+<p id="id-727"><span  class="index">【728】</span><span class="correct">[正确]</span><span class="correctText"></span>软质面包是以面粉、酵母、水、糖、盐为基本原料，经面团调制、发酵、成形、醒发、烘烤等工艺而制成的膨松、松软制品。</p>
+<p id="id-728"><span  class="index">【729】</span><span class="correct">[错误]</span><span class="correctText"></span>不需任何条件，成本核算都能准确计算实际消耗的成本。</p>
+<p id="id-729"><span  class="index">【730】</span><span class="correct">[正确]</span><span class="correctText"></span>进食酸性水果不会引起机体酸碱平衡的紊乱。</p>
+<p id="id-730"><span  class="index">【731】</span><span class="correct">[正确]</span><span class="correctText"></span>因为酸会降低果冻的凝胶力，所以我们不选用含酸性物质的水果。</p>
+<p id="id-731"><span  class="index">【732】</span><span class="correct">[正确]</span><span class="correctText"></span>利用结力的凝胶特性，使用不同的模具就可生产出风格、形态各异的果冻。</p>
+<p id="id-732"><span  class="index">【733】</span><span class="correct">[正确]</span><span class="correctText"></span>按面包本身的质感将面包划分为软质面包、硬质面包、脆皮面包和松质面包等四大类。</p>
+<p id="id-733"><span  class="index">【734】</span><span class="correct">[正确]</span><span class="correctText"></span>大型宴会自助餐的甜点装盘时，往往只采用大的圆盘或大镜盘装盘。</p>
+<p id="id-734"><span  class="index">【735】</span><span class="correct">[错误]</span><span class="correctText"></span>道德分为社会公德、家庭婚姻道德和职业道德三种，这三种道德是独立的，各成体系。</p>
+<p id="id-735"><span  class="index">【736】</span><span class="correct">[正确]</span><span class="correctText"></span>爱祖国、爱民族、爱劳动、爱科学、爱社会主义是社会主义道德建设的基本要求。</p>
+<p id="id-736"><span  class="index">【737】</span><span class="correct">[正确]</span><span class="correctText"></span>道德是以善恶为标准，调节人们之间和个人与社会之间关系的行为规范。</p>
+<p id="id-737"><span  class="index">【738】</span><span class="correct">[错误]</span><span class="correctText"></span>竞争是不符合人类根本利益的行为，因而是不道德的行为。</p>
+<p id="id-738"><span  class="index">【739】</span><span class="correct">[正确]</span><span class="correctText"></span>为使面团重新产气、膨松，得到制品所需的形状和较好的食用品质，大多面包制品都需最后的醒发过程。</p>
+<p id="id-739"><span  class="index">【740】</span><span class="correct">[错误]</span><span class="correctText"></span>面粉在贮存期间，由于面粉的“熟化”作用，使得面粉的品质下降。</p>
+<p id="id-740"><span  class="index">【741】</span><span class="correct">[错误]</span><span class="correctText"></span>因为干果类原料吸收水分后极易发生霉变，所以干果类原料应放在干燥通风的地方保存。</p>
+<p id="id-741"><span  class="index">【742】</span><span class="correct">[正确]</span><span class="correctText"></span>职业道德是人们在特定的职业活动中所应遵循的行为规范的总和。</p>
+<p id="id-742"><span  class="index">【743】</span><span class="correct">[正确]</span><span class="correctText"></span>口蹄疫病毒可引起传染性极强的接触性传染病。一旦发现病畜，要全部屠宰、销毁。</p>
+<p id="id-743"><span  class="index">【744】</span><span class="correct">[正确]</span><span class="correctText"></span>厨房的设备必须经过培训才能让其操作。</p>
+<p id="id-744"><span  class="index">【745】</span><span class="correct">[正确]</span><span class="correctText"></span>洁白面粉通常为低筋粉或麦心粉。</p>
+<p id="id-745"><span  class="index">【746】</span><span class="correct">[正确]</span><span class="correctText"></span>由于糖具有渗透性，使面团中面筋蛋白质中的水分减少，面筋形成度降低，面团弹性减弱。</p>
+<p id="id-746"><span  class="index">【747】</span><span class="correct">[正确]</span><span class="correctText"></span>动物脂奶油是从鲜牛奶中分离而成的乳制品。</p>
+<p id="id-747"><span  class="index">【748】</span><span class="correct">[正确]</span><span class="correctText"></span>打发动物脂奶油打至软峰出现，奶油细腻如膏即可。</p>
+<p id="id-748"><span  class="index">【749】</span><span class="correct">[正确]</span><span class="correctText"></span>清酥类是一类层次清晰、松酥的点心。</p>
+<p id="id-749"><span  class="index">【750】</span><span class="correct">[错误]</span><span class="correctText"></span>全蛋海绵蛋糕除了使用蛋清外，还使用蛋黄，有的海绵蛋糕配方中还要加入少量的液体如牛奶、水或溶化的黄油等。</p>
+<p id="id-750"><span  class="index">【751】</span><span class="correct">[正确]</span><span class="correctText"></span>全蛋搅打法又称“混打法”。</p>
+<p id="id-751"><span  class="index">【752】</span><span class="correct">[错误]</span><span class="correctText"></span>直刀切是用刀笔直的向下切，同时配合前推后拉，使用力均匀。</p>
+<p id="id-752"><span  class="index">【753】</span><span class="correct">[正确]</span><span class="correctText"></span>搓油脂和面粉混合时，不易过多搓揉，以防面筋网络的形成，影响质量。</p>
+<p id="id-753"><span  class="index">【754】</span><span class="correct">[正确]</span><span class="correctText"></span>制作好的水果塔或水果排要求有相应的水果香味。</p>
+<p id="id-754"><span  class="index">【755】</span><span class="correct">[正确]</span><span class="correctText"></span>软质面包坯在醒发过程中，应及时将烤箱调到所需的温度</p>
+<p id="id-755"><span  class="index">【756】</span><span class="correct">[错误]</span><span class="correctText"></span>重要宴会的甜点盘一般多选用银制的圆盘。</p>
+<p id="id-756"><span  class="index">【757】</span><span class="correct">[错误]</span><span class="correctText"></span>一男运动员22 岁，身高178 厘米，如果该运动员每日需热量为15500 千焦，则其每日需蛋白质70 克。</p>
+<p id="id-757"><span  class="index">【758】</span><span class="correct">[正确]</span><span class="correctText"></span>对于夹有馅心的混酥制品，入炉之前要在制品表面扎些透气眼，以利于烘烤时水气的溢出，保持制品表面的平整，保证成品的美观。</p>
+<p id="id-758"><span  class="index">【759】</span><span class="correct">[错误]</span><span class="correctText"></span>竞争的实质是科技和资金的竞争。</p>
+<p id="id-759"><span  class="index">【760】</span><span class="correct">[正确]</span><span class="correctText"></span>搓油脂和面粉混合时，不宜过多搓揉，以防面筋网络的形成，影响质量。</p>
+<p id="id-760"><span  class="index">【761】</span><span class="correct">[错误]</span><span class="correctText"></span>果冻调制方法简单，一般将结力粉直接倒入煮沸的溶液中，再加入所需的调米、配料，即为混合的果冻液。</p>
+<p id="id-761"><span  class="index">【762】</span><span class="correct">[错误]</span><span class="correctText"></span>混酥面的酥松主要是由于面团的蛋白质性质所决定的。</p>
+<p id="id-762"><span  class="index">【763】</span><span class="correct">[正确]</span><span class="correctText"></span>制作混酥面坯时，宜选用熔点高的油脂。</p>
+<p id="id-763"><span  class="index">【764】</span><span class="correct">[错误]</span><span class="correctText"></span>由于金属模具传热快，所以请蛋糕面糊受热快、胀发也快，所以用金属模具填充清蛋糕面糊应适当少放一些。</p>
+<p id="id-764"><span  class="index">【765】</span><span class="correct">[正确]</span><span class="correctText"></span>在调制混酥面坯时，为增强混酥面坯的松酥性，可加大油脂的用量或加入适量的膨松剂。</p>
+<p id="id-765"><span  class="index">【766】</span><span class="correct">[正确]</span><span class="correctText"></span>对于体积较大、较厚的混酥类制品需要低温、长时间的烘烤才能很好的成熟。</p>
+<p id="id-766"><span  class="index">【767】</span><span class="correct">[正确]</span><span class="correctText"></span>面点间员工操作时不戴戒指、手镯、手表，更不允许涂指甲油。</p>
+<p id="id-767"><span  class="index">【768】</span><span class="correct">[错误]</span><span class="correctText"></span>清蛋糕面糊中油脂配料越多，所需的烘烤温度就越低，时间也就越长。</p>
+<p id="id-768"><span  class="index">【769】</span><span class="correct">[错误]</span><span class="correctText"></span>油面调制法就是先将油脂和糖一同放入搅拌缸内，用高速搅拌几分钟，再加入鸡蛋等辅料的工艺方法。</p>
+<p id="id-769"><span  class="index">【770】</span><span class="correct">[正确]</span><span class="correctText"></span>混酥面坯的成型好坏，直接影响到混酥制品的质量和外观。</p>
+<p id="id-770"><span  class="index">【771】</span><span class="correct">[正确]</span><span class="correctText"></span>把鸡蛋添加到制品中，可以提高制品的热能和营养价值。</p>
+<p id="id-771"><span  class="index">【772】</span><span class="correct">[正确]</span><span class="correctText"></span>西点按其用途分类，可分为零售点心、宴会点心、酒会点心、自助餐点心和茶点。</p>
+<p id="id-772"><span  class="index">【773】</span><span class="correct">[正确]</span><span class="correctText"></span>果冻是用糖、水和鱼胶粉或琼脂，按一定比例调制而成的冷冻甜食。</p>
+<p id="id-773"><span  class="index">【774】</span><span class="correct">[正确]</span><span class="correctText"></span>成本毛利率又称成本率。</p>
+<p id="id-774"><span  class="index">【775】</span><span class="correct">[正确]</span><span class="correctText"></span>盐可以在发酵面团在中调节发酵速度，没有盐的面团发酵极不稳定，容易发酵过度，发酵的时间难以掌握。</p>
+<p id="id-775"><span  class="index">【776】</span><span class="correct">[错误]</span><span class="correctText"></span>卫生技术是为了预防职业病而采取的控制或消除职业危害的各种技术措施。</p>
+<p id="id-776"><span  class="index">【777】</span><span class="correct">[正确]</span><span class="correctText"></span>机械设备、工具、工作台要做到木见本色铁见光，保证没有污物。</p>
+<p id="id-777"><span  class="index">【778】</span><span class="correct">[错误]</span><span class="correctText"></span>食物搭配的种类越少，越有利于提高食物蛋白质的营养价值。</p>
+<p id="id-778"><span  class="index">【779】</span><span class="correct">[错误]</span><span class="correctText"></span>风味餐厅自助餐甜点装盘一般要求色彩鲜明、精美，有艺术效果。</p>
+<p id="id-779"><span  class="index">【780】</span><span class="correct">[正确]</span><span class="correctText"></span>面点间员工要求佩带名牌，且佩带配置要明显。</p>
+<p id="id-780"><span  class="index">【781】</span><span class="correct">[正确]</span><span class="correctText"></span>制作好的果冻应形态完整、透明有光泽，制品硬度适中，口感润滑。</p>
+<p id="id-781"><span  class="index">【782】</span><span class="correct">[正确]</span><span class="correctText"></span>职业道德 是人们在特定的职业活动中所应遵循的行为规范的总和。</p>
+<p id="id-782"><span  class="index">【783】</span><span class="correct">[正确]</span><span class="correctText"></span>软质面包是以面粉、酵母、水、糖、盐为基本原料，经面团调制、发酵、成形、醒发、烘烤等工艺而制成的膨胀、松软制品。</p>
+<p id="id-783"><span  class="index">【784】</span><span class="correct">[错误]</span><span class="correctText"></span>食品添加剂是指食品生产、加工、保存等过程中添加和使用的少量化学合成物质。</p>
+<p id="id-784"><span  class="index">【785】</span><span class="correct">[正确]</span><span class="correctText"></span>利用鸡蛋的蛋白的发泡性，可增加制品的体积，有利于点心内部形成蜂窝结构，提高疏松性。</p>
+<p id="id-785"><span  class="index">【786】</span><span class="correct">[正确]</span><span class="correctText"></span>面团搅拌过度，或破坏面团中面筋质的结构，使面团过分湿润、粘手，对整形操作造成困难。</p>
+<p id="id-786"><span  class="index">【787】</span><span class="correct">[正确]</span><span class="correctText"></span>如果面部烧伤，不宜包扎，以防水肿时影响呼吸。</p>
+<p id="id-787"><span  class="index">【788】</span><span class="correct">[正确]</span><span class="correctText"></span>菜点成本是指构成产品的人工耗费之和。</p>
+<p id="id-788"><span  class="index">【789】</span><span class="correct">[错误]</span><span class="correctText"></span>蛋白质摄入过多，会造成营养不良性水肿。</p>
+<p id="id-789"><span  class="index">【790】</span><span class="correct">[错误]</span><span class="correctText"></span>软质面包坯在醒发过程中，应及时将烤箱调到所需的温度。</p>
+<p id="id-790"><span  class="index">【791】</span><span class="correct">[错误]</span><span class="correctText"></span>糖可以增加面团中酵母的营养，促进酵母的繁殖，是供给酵母能量的来源。</p>
+<p id="id-791"><span  class="index">【792】</span><span class="correct">[错误]</span><span class="correctText"></span>“sheeter”是指模具的意思。</p>
+<p id="id-792"><span  class="index">【793】</span><span class="correct">[正确]</span><span class="correctText"></span>不粘锅能够在260℃下长期使用。</p>
+<p id="id-793"><span  class="index">【794】</span><span class="correct">[正确]</span><span class="correctText"></span>派的外形一般有单层派和双层派。</p>
+<p id="id-794"><span  class="index">【795】</span><span class="correct">[正确]</span><span class="correctText"></span>腌制咸菜时，一定要放足适量的盐，因为食盐浓度在12%以下易产生亚硝酸盐。</p>
+<p id="id-795"><span  class="index">【796】</span><span class="correct">[错误]</span><span class="correctText"></span>揉面时用力要轻柔，要力“浮力”，否则会影响成品的膨松。</p>
+<p id="id-796"><span  class="index">【797】</span><span class="correct">[错误]</span><span class="correctText"></span>成本核算一般采用“以销计耗”，倒求成本的方法。</p>
+<p id="id-797"><span  class="index">【798】</span><span class="correct">[正确]</span><span class="correctText"></span>盐可以在发酵面团中调节发酵速度，没有盐的面团发酵极不稳定，容易发酵过度，发酵的时间难以掌握。</p>
+
+        <div id="list">
+        </div>
+        <script>
+            var html = '';
+            for (var i = 0; i < 798;i ++) {
+                html += ('<label class="index" for="id-' + (i+1) +'">' + (i+1) + '</label>');
+            }
+            var list = document.getElementById('list');
+            list.innerHTML = html;
+            list.addEventListener('click', function(e) {
+                e = e || event;
+                var id = e.target.getAttribute('for');
+                if (id) {
+                    document.getElementById(id).scrollIntoView(false);
+                }
+                if (list.hasAttribute('toggle')) {
+                    list.removeAttribute('toggle');
+                } else {
+                    list.setAttribute('toggle', 'toggle');
+                } 
+            });
+        </script>
+    </body>
+</html>
